@@ -14,3 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+const map = L.map("map").setView([56.952, 24.1], 13);
+L.tileLayer.provider("CartoDB.Positron").addTo(map);
