@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     match 'search', on: :collection, via: [:get, :post]
   end
 
+  match "map", to: "map#show", via: [:get]
+
   get 'home/index'
 
   root to: 'home#index'
