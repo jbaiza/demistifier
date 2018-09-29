@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&subset=latin-ext|Pacifico");
 
 /*
 	Introspect by TEMPLATED
@@ -3392,7 +3392,7 @@ body {
   font-style: normal;
   font-weight: normal;
   text-transform: none !important;
-  color:#096782;
+  color: #096782;
   display: block;
   font-size: 16px;
   height: 2.25em;
@@ -3417,7 +3417,7 @@ body {
 }
 
 .navPanelToggle *:before {
-  color:#096782;
+  color: #096782;
   display: block;
   font-size: 16px;
   height: 2.25em;
@@ -4134,4 +4134,21 @@ body.is-loading #banner:after {
   #footer {
     padding: 2em 0 0.1em 0;
   }
+}
+
+.hint {
+  font-size: 11px;
+  color: #777;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+#search-hint img {
+  display: block;
+  margin: 15px auto;
+  border: 1px solid #ddd;
+}
+#search-hint p {
+  margin: 30px 0;
+  text-align: center;
 }
