@@ -1,6 +1,6 @@
 //https://developer.here.com/api-explorer/geovisualization/technology_markers/markers-csv-provider
 
-var startPosition = '56.924012,24.137290';
+var startPosition = new H.geo.Point(56.962526, 24.097702);
 var departureTime = '2018-09-28T07:00:00';
 
 var SECONDS = 1;
@@ -40,8 +40,8 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
         defaultLayers.normal.base,
         {
             pixelRatio,
-            center: new H.geo.Point(56.962526, 24.007702),
-            zoom: 10
+            center: startPosition,
+            zoom: 13
         }
     );
 
