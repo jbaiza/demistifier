@@ -101,6 +101,7 @@ CREATE TABLE public.statistics
 (
     id bigint NOT NULL DEFAULT nextval('statistics_id_seq'::regclass),
     institution_id bigint,
+    institution_program_language_id bigint,
     region_id bigint,
     statistic_measure_id bigint,
     value integer,
