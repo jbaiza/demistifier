@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
   resources :children, only: [:show] do
     match 'search', on: :collection, via: [:get, :post]
+    get 'hint', on: :collection
   end
 
   match "map", to: "map#show", via: [:get]

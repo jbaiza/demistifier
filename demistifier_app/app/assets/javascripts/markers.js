@@ -138,7 +138,7 @@ var hoveringInfo = false;
             function heat(q) {
                 var clamp = 500;
                 var r = 255;//Math.floor(map_range(Math.min(q, clamp), 1, clamp, 1, 255));
-                var g = Math.floor(map_range(Math.min(q, clamp), 1, clamp, 1, 255));
+                var g = Math.floor(map_range(Math.min(q, clamp), 1, clamp, 255, 1));
                 var b = 55;
                 return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;;
             }

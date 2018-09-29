@@ -9,3 +9,8 @@
   <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
   <script type="text/javascript" src="markers.js"></script>
 </section>
+
+<div id="grad">
+  <span id="grad_left"> <%= InstitutionProgramLanguage.select("MIN(queue_size) AS queue_size")[0].queue_size %></span>
+  <span id="grad_right"> <%= InstitutionProgramLanguage.select("MAX(queue_size) AS queue_size")[0].queue_size %></span>
+</div>
