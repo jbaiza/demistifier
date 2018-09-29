@@ -1,0 +1,2 @@
+class StatisticMeasure < ApplicationRecord
+end

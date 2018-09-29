@@ -1,0 +1,9 @@
+<%- headers = ['name', 'reg_nr', 'lr_izm_code', 'address', 'institution_type', 'email', 'url', 'lat', 'lon', 'region'] -%>
+<%= CSV.generate_line headers %>
+<%- @institutions.each do |institution| -%>
+<%= CSV.generate_line(
+  [institution.name, institution.reg_nr, institution.lr_izm_code, institution.address, institution.institution_type,
+    institution.email, institution.url, institution.lat, institution.lon, institution.region.try(:name)
+  ]
+) -%>
+<%- end -%>

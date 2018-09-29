@@ -45,7 +45,7 @@ CREATE TABLE public.institutions
     reg_nr character varying COLLATE pg_catalog."default",
     lr_izm_code character varying COLLATE pg_catalog."default",
     address character varying COLLATE pg_catalog."default",
-    type character varying COLLATE pg_catalog."default",
+    institution_type character varying COLLATE pg_catalog."default",
     email character varying COLLATE pg_catalog."default",
     url character varying COLLATE pg_catalog."default",
     lat double precision,
@@ -197,7 +197,7 @@ CREATE TABLE public.applications
     child_id bigint,
     registered_date date,
     desirable_start_date date,
-    priority_5year_old boolean,
+    priority_5years_old boolean,
     priority_commission boolean,
     priority_sibling boolean,
     priority_parent_local boolean,
@@ -239,3 +239,8 @@ CREATE INDEX index_applications_on_institution_program_language_id
     ON public.applications USING btree
     (institution_program_language_id)
     TABLESPACE pg_default;
+
+alter table regions alter column updated_at set default current_date;
+alter table regions alter column created_at set default current_date;
+alter table institutions alter column created_at set default current_date;
+alter table institutions alter column updated_at set default current_date;
