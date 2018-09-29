@@ -106,6 +106,7 @@ CREATE TABLE public.statistics
     statistic_measure_id bigint,
     value integer,
     value_date date,
+    year integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     CONSTRAINT statistics_pkey PRIMARY KEY (id),
