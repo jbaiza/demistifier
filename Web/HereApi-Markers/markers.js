@@ -33,7 +33,7 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
         defaultLayers.normal.base,
         {
             pixelRatio,
-            center: new H.geo.Point(52.3, 13.34),
+            center: new H.geo.Point(56.962526, 24.007702),
             zoom: 10
         }
     );
@@ -66,13 +66,13 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
                     'type': 'Feature',
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [Number(row[3]), Number(row[2])]
+                        'coordinates': [Number(row[1]), Number(row[2])]
                     },
                     'properties': {
                         'facility': row[0],
-                        'address': row[1],
-                        'SUBahn': row[4],
-                        'type': row[5]
+                        'address': row[0],
+                        'SUBahn': row[0],
+                        'type': 4
                     }
                 };
                 features.push(feature);

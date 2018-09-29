@@ -1,3 +1,132 @@
-Institution,Address,Lat,Lon,Info,Type
-Institūcija,Adrese,52.3,13.2,Informācija,1
-Cita institūcija,Cita Adrese,52.1,13.1,Cita informācija,4
+﻿name,lat,lon
+Rīgas 104. pirmsskolas izglītības iestāde,24.007702,56.962526
+Rīgas 106. pirmsskolas izglītības iestāde,24.181809,56.96314
+Rīgas 11. pirmsskolas izglītības iestāde,24.092036,56.941842
+Rīgas 110. pirmsskolas izglītības iestāde,24.090335,57.035733
+Rīgas 112. pirmsskolas izglītības iestāde,24.218175,56.987722
+Rīgas 123. pirmsskolas izglītības iestāde,24.07053,56.945466
+Rīgas 124. pirmsskolas izglītības iestāde ""Dzērvenīte"",24.093404,56.917518
+Rīgas 125. pirmsskolas izglītības iestāde,24.171386,56.926632
+Rīgas 126. pirmsskolas izglītības iestāde,24.195011,56.980262
+Rīgas 13. pirmsskolas izglītības iestāde ""Ābecītis"",24.088329,56.926308
+Rīgas 132. pirmsskolas izglītības iestāde ""Ieviņa"",24.070058,56.933918
+Rīgas 135. pirmsskolas izglītības iestāde ""Liepziediņi"",24.177722,56.982519
+Rīgas 139. pirmsskolas izglītības iestāde,24.062483,56.971965
+Rīgas 14. pirmsskolas izglītības iestāde,24.048718,56.956723
+Rīgas 141. pirmsskolas izglītības iestāde ""Kastanītis"",24.116492,56.912016
+Rīgas 145. pirmsskolas izglītības iestāde,24.135922,57.017868
+Rīgas 148. pirmsskolas izglītības iestāde,24.125537,56.964316
+Rīgas 149. pirmsskolas izglītības iestāde ""Saulīte"",24.086441,56.926448
+Rīgas 15. pirmsskolas izglītības iestāde,24.17622,57.04509
+Rīgas 152. pirmsskolas izglītības iestāde,24.242771,56.988622
+Rīgas 154. pirmsskolas izglītības iestāde,24.19668,56.959461
+Rīgas 160. pirmsskolas izglītības iestāde,24.234408,56.987245
+Rīgas 161. pirmsskolas izglītības iestāde,24.1144,57.02871
+Rīgas 162. pirmsskolas izglītības iestāde ""Saulīte"",24.133197,57.017655
+Rīgas 167. pirmsskolas izglītības iestāde,24.188762,56.966597
+Rīgas 169. pirmsskolas izglītības iestāde,24.131448,56.999317
+Rīgas 170. pirmsskolas izglītības iestāde,24.134774,56.940901
+Rīgas 172. pirmsskolas izglītības iestāde,24.173291,56.912938
+Rīgas 173. pirmsskolas izglītības iestāde,24.174385,56.911603
+Rīgas 180. pirmsskolas izglītības iestāde,24.244026,56.975603
+Rīgas 182. pirmsskolas izglītības iestāde,24.173323,56.96314
+Rīgas 192. pirmsskolas izglītības iestāde,24.158276,56.996302
+Rīgas 193. pirmsskolas izglītības iestāde,24.183826,56.906085
+Rīgas 197. pirmsskolas izglītības iestāde,24.027185,57.037157
+Rīgas 200. pirmsskolas izglītības iestāde,24.123294,56.956232
+Rīgas 208. pirmsskolas izglītības iestāde,24.181885,56.917729
+Rīgas 209. pirmsskolas izglītības iestāde ""Bitīte"",24.077278,56.941527
+Rīgas 21. pirmsskolas izglītības iestāde ""Laimiņa"",24.100914,57.03836
+Rīgas 210. pirmsskolas izglītības iestāde,24.048305,57.036334
+Rīgas 213. pirmsskolas izglītības iestāde,24.123294,56.965424
+Rīgas 215. pirmsskolas izglītības iestāde,24.049973,56.952733
+Rīgas 216. pirmsskolas izglītības iestāde,24.179589,56.919884
+Rīgas 220. pirmsskolas izglītības iestāde,24.179878,56.913091
+Rīgas 221. pirmsskolas izglītības iestāde,24.139774,56.974304
+Rīgas 223. pirmsskolas izglītības iestāde,24.120923,56.997231
+Rīgas 224. pirmsskolas izglītības iestāde,24.200553,56.906196
+Rīgas 225. pirmsskolas izglītības iestāde,24.209855,56.902013
+Rīgas 229. pirmsskolas izglītības iestāde,24.16519,56.925827
+Rīgas 231. pirmsskolas izglītības iestāde,24.201883,56.956542
+Rīgas 232. pirmsskolas izglītības iestāde,24.092288,57.038313
+Rīgas 233. pirmsskolas izglītības iestāde,24.171284,56.95935
+Rīgas 234. pirmsskolas izglītības iestāde,24.014204,56.9671
+Rīgas 236. pirmsskolas izglītības iestāde ""Eglīte"",24.179615,56.969793
+Rīgas 239. pirmsskolas izglītības iestāde,24.211721,56.937594
+Rīgas 241. pirmsskolas izglītības iestāde,24.237803,56.965193
+Rīgas 244. pirmsskolas izglītības iestāde,24.200993,56.951288
+Rīgas 247. pirmsskolas izglītības iestāde ""Rūķītis"",24.099036,57.031641
+Rīgas 251. pirmsskolas izglītības iestāde ""Mežciems"",24.238919,56.972322
+Rīgas 252. pirmsskolas izglītības iestāde,24.178655,56.953184
+Rīgas 254. pirmsskolas izglītības iestāde,24.197495,56.939373
+Rīgas 255. pirmsskolas izglītības iestāde,24.198922,56.941229
+Rīgas 256. pirmsskolas izglītības iestāde,24.197506,56.943195
+Rīgas 258. pirmsskolas izglītības iestāde,24.205906,56.935264
+Rīgas 259. pirmsskolas izglītības iestāde,24.208245,56.936816
+Rīgas 262. pirmsskolas izglītības iestāde,24.206657,56.933075
+Rīgas 264. pirmsskolas izglītības iestāde ""Zelta atslēdziņa"",24.004472,56.9456
+Rīgas 266. pirmsskolas izglītības iestāde,24.210069,56.94141
+Rīgas 267. pirmsskolas izglītības iestāde,24.211507,56.943166
+Rīgas 27. pirmsskolas izglītības iestāde,24.038794,56.94134
+Rīgas 270. pirmsskolas izglītības iestāde,24.223909,56.941674
+Rīgas 272. pirmsskolas izglītības iestāde ""Pērlīte"",24.091612,56.924879
+Rīgas 273. pirmsskolas izglītības iestāde,24.196583,56.950995
+Rīgas 275. pirmsskolas izglītības iestāde ""Austriņa"",24.097084,56.902599
+Rīgas 36. pirmsskolas izglītības iestāde,24.107126,56.974573
+Rīgas 4. pirmsskolas izglītības iestāde ""Avotiņš"",24.082857,56.901094
+Rīgas 40. pirmsskolas izglītības iestāde,24.16514,56.932367
+Rīgas 41. pirmsskolas izglītības iestāde,24.151629,56.940257
+Rīgas 42. pirmsskolas izglītības iestāde,24.119872,56.99892
+Rīgas 44. pirmsskolas izglītības iestāde,24.152681,56.962544
+Rīgas 46. pirmsskolas izglītības iestāde,24.032078,56.954851
+Rīgas 49. pirmsskolas izglītības iestāde,24.122221,56.96569
+Rīgas 5. pirmsskolas izglītības iestāde ""Čiekuriņš"",24.16636,56.987672
+Rīgas 57. pirmsskolas izglītības iestāde,24.186476,56.981017
+Rīgas 59. pirmsskolas izglītības iestāde,24.120902,56.964012
+Rīgas 61. pirmsskolas izglītības iestāde,24.178677,56.961654
+Rīgas 62. pirmsskolas izglītības iestāde,24.067569,56.947215
+Rīgas 66. pirmsskolas izglītības iestāde,24.124013,56.965986
+Rīgas 68. pirmsskolas izglītības iestāde,24.139575,56.949626
+Rīgas 7. pirmsskolas izglītības iestāde,24.143647,56.939953
+Rīgas 74. pirmsskolas izglītības iestāde,24.130729,56.970796
+Rīgas 79. pirmsskolas izglītības iestāde,24.1501,56.970904
+Rīgas 80. pirmsskolas izglītības iestāde,24.053965,56.968562
+Rīgas 81. pirmsskolas izglītības iestāde,24.049544,56.964924
+Rīgas 88. pirmsskolas izglītības iestāde,24.125934,56.955296
+Rīgas 94. pirmsskolas izglītības iestāde,24.14045,56.962912
+Rīgas 97. pirmsskolas izglītības iestāde,24.209383,56.900754
+Rīgas Āgenskalna pirmsskola,24.075776,56.930933
+Rīgas Bolderājas pirmsskolas izglītības iestāde,24.051111,57.028137
+Rīgas Grīziņkalna pirmsskola,24.149183,56.959654
+Rīgas Pārdaugavas pirmsskola,24.070669,56.921237
+Rīgas pirmsskolas izglītības iestāde ""Blāzmiņa"",24.105152,57.031413
+Rīgas pirmsskolas izglītības iestāde ""Domino"",24.197248,56.933128
+Rīgas pirmsskolas izglītības iestāde ""Dzilniņa"",24.218459,56.942516
+Rīgas pirmsskolas izglītības iestāde ""Dzirnaviņas"",24.000857,56.955541
+Rīgas pirmsskolas izglītības iestāde ""Kadiķītis"",24.053192,56.969451
+Rīgas pirmsskolas izglītības iestāde ""Madariņa"",24.061067,56.96138
+Rīgas pirmsskolas izglītības iestāde ""Margrietiņa"",24.029095,56.961508
+Rīgas pirmsskolas izglītības iestāde ""Māra"",24.187721,56.946472
+Rīgas pirmsskolas izglītības iestāde ""Mārdega"",24.144237,56.957542
+Rīgas pirmsskolas izglītības iestāde ""Pasaciņa"",24.059329,56.957355
+Rīgas pirmsskolas izglītības iestāde ""Priedīte"",24.057591,56.943137
+Rīgas pirmsskolas izglītības iestāde ""Pūcīte"",24.145321,56.962538
+Rīgas pirmsskolas izglītības iestāde ""Rotaļa"",24.150642,56.956448
+Rīgas pirmsskolas izglītības iestāde ""Sprīdītis"",24.062414,56.933611
+Rīgas pirmsskolas izglītības iestāde ""Viršu dārzs"",24.167562,57.006457
+Rīgas pirmsskolas izglītības iestāde ""Zvaigznīte"",24.147466,56.95839
+Rīgas pirmsskolas izglītības iestāde „Annele”,24.006758,56.956126
+Rīgas pirmsskolas izglītības iestāde „Asniņš”,24.186004,56.905171
+Rīgas pirmsskolas izglītības iestāde „Ābelīte”,24.126492,56.956992
+Rīgas pirmsskolas izglītības iestāde „Cielaviņa”,24.013066,56.966761
+Rīgas pirmsskolas izglītības iestāde „Daugaviņa”,24.040489,56.934954
+Rīgas pirmsskolas izglītības iestāde „Kamenīte”,24.027743,56.961543
+Rīgas pirmsskolas izglītības iestāde „Kamolītis”,24.051154,56.962081
+Rīgas pirmsskolas izglītības iestāde „Laismiņa”,24.004827,56.962503
+Rīgas pirmsskolas izglītības iestāde „Liepiņa”,24.128621,56.99946
+Rīgas pirmsskolas izglītības iestāde „Mārītes”,24.066925,56.969609
+Rīgas pirmsskolas izglītības iestāde „Mežrozīte”,24.051787,56.948877
+Rīgas pirmsskolas izglītības iestāde „Pīlādzītis”,24.155245,56.954096
+Rīgas pirmsskolas izglītības iestāde „Vadakstīte”,24.094734,56.913735
+Rīgas Ziepniekkalna pirmsskola,24.091687,56.914051
+Rīgas Zolitūdes pirmsskola,24.005073,56.944816
