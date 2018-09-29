@@ -30,7 +30,7 @@ class Application < ApplicationRecord
       end
       program_language = InstitutionProgramLanguage.find_or_create_by(
         institution: institution,
-        starting_age: application['program_starting_age']
+        starting_age: application['program_starting_age'],
         language: application['group_language'].encode("UTF-8"),
         language_en: application['group_language_en']
       )
