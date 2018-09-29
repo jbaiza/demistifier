@@ -11,19 +11,19 @@ class InstitutionProgramLanguage < ApplicationRecord
     end
   end
 
-  def avg_invited
-    @avg_invited ||= begin
-      measure_id = StatisticMeasure.find_by(code: 'INVITED').id
+  def self.calculate_average_invited
+    measure_id = StatisticMeasure.find_by(code: 'INVITED').id
+    InstitutionProgramLanguage.all.each do |program_language|
       sum = 0
       count = 0
-      statistics.where(statistic_measure_id: measure_id).
+      program_language.statistics.where(statistic_measure_id: measure_id).
           where("year BETWEEN ? AND ?", Time.now.year - 4, Time.now.year - 1).each do |stat|
         if (value = stat['value']) > 0
           sum += value
           count += 1
         end
       end
-      sum / count if count > 0
+      program_language.update(avg_invited: sum / count) if count > 0
     end
   end
 end
