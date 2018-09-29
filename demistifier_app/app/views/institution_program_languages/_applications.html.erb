@@ -12,7 +12,7 @@
   <tbody>
     <% applications.sort_by(&:real_queue_position).each do |application| %>
       <tr>
-        <td><%= application.child.child_uid %></td>
+        <td><%= link_to application.child.child_uid, child_path(application.child) %></td>
         <td><%= l(application.registered_date) %></td>
         <td><%= l(application.desirable_start_date) %></td>
         <td><%= application.riga_queue_position %></td>

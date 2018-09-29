@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th>Instititution name</th>
+      <th>Language</th>
+      <th>Date registered</th>
+      <th>Desired start date</th>
+      <th>Position in eRiga list</th>
+      <th>Calculated position</th>
+      <th>Total application count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% applications.sort_by(&:real_queue_position).each do |application| %>
+      <tr>
+        <td><%= link_to application.institution_program_language.institution.name, institution_institution_program_language_path(application.institution_program_language.institution, application.institution_program_language) %></td>
+        <td><%= link_to application.institution_program_language.language_en, institution_institution_program_language_path(application.institution_program_language.institution, application.institution_program_language) %></td>
+        <td><%= l(application.registered_date) %></td>
+        <td><%= l(application.desirable_start_date) %></td>
+        <td><%= application.riga_queue_position %></td>
+        <td><%= application.real_queue_position %></td>
+        <td><%= application.institution_program_language.applications.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
