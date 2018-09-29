@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_29_013447) do
+ActiveRecord::Schema.define(version: 2018_09_29_111748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,7 +95,10 @@ ActiveRecord::Schema.define(version: 2018_09_29_013447) do
     t.date "value_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "institution_program_language_id"
+    t.integer "year"
     t.index ["institution_id"], name: "index_statistics_on_institution_id"
+    t.index ["institution_program_language_id"], name: "index_statistics_on_institution_program_language_id"
     t.index ["region_id"], name: "index_statistics_on_region_id"
     t.index ["statistic_measure_id"], name: "index_statistics_on_statistic_measure_id"
   end
@@ -104,6 +107,7 @@ ActiveRecord::Schema.define(version: 2018_09_29_013447) do
   add_foreign_key "applications", "institution_program_languages"
   add_foreign_key "institution_program_languages", "institutions"
   add_foreign_key "institutions", "regions"
+  add_foreign_key "statistics", "institution_program_languages"
   add_foreign_key "statistics", "institutions"
   add_foreign_key "statistics", "regions"
   add_foreign_key "statistics", "statistic_measures"

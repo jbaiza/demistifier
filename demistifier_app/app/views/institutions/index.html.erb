@@ -13,6 +13,7 @@
       <th>Language</th>
       <th>Starting age</th>
       <th>Queue size</th>
+      <th title="Average invited in previous 3 years">Average invited</th>
       <th></th>
     </tr>
   </thead>
@@ -34,6 +35,7 @@
           <td><%= program_language.language_en.capitalize %></td>
           <td><%= program_language.starting_age %></td>
           <td><%= program_language.queue_size %></td>
+          <td><%= program_language.avg_invited %></td>
           <td><%= link_to 'See queue', institution_institution_program_language_path(institution, program_language) %></td>
         </tr>
         <% end %>

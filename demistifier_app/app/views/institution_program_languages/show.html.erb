@@ -44,4 +44,9 @@
   <%= @institution_program_language.queue_size %>
 </p>
 
+<p>
+  <strong>Average invited in previous 3 years:</strong>
+  <%= @institution_program_language.avg_invited %>
+</p>
+
 <%= render 'applications', applications: @institution_program_language.applications %>
