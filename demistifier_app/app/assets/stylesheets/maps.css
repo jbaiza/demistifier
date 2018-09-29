@@ -1,9 +1,11 @@
 .dl-map {
     position: absolute;
-    top: 2em;
-    bottom: 0;
-    width: 100%;
-    height: calc(100vh - 5em);
+    top: 5em;
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+    width: calc(100% - 2em);
+    height: calc(100vh - 6em);
 }
 
 .info-bubble {
@@ -35,7 +37,7 @@
 #grad {
   position: absolute;
   top: 6em;
-  left: 10px;
+  left: 2em;
   height: 2em;
   width: 150px;
   background-image: linear-gradient(to right, rgb(255, 255, 55), rgb(255, 1, 55));

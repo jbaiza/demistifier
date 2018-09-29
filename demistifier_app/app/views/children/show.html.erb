@@ -1,13 +1,15 @@
-<p id="notice"><%= notice %></p>
+<section id="show">
+  <div class="inner">
+    <p>
+      <strong>Child UID:</strong>
+      <%= @child.child_uid %>
+    </p>
 
-<p>
-  <strong>Child UID:</strong>
-  <%= @child.child_uid %>
-</p>
+    <p>
+      <strong>Minimal predicted waiting time:</strong>
+      <%= convert_to_months_years(@child.min_waiting_time) %>
+    </p>
 
-<p>
-  <strong>Minimal predicted waiting time:</strong>
-  <%= convert_to_months_years(@child.min_waiting_time) %>
-</p>
-
-<%= render 'applications', applications: @child.applications %>
+    <%= render 'applications', applications: @child.applications %>
+  </div>
+</section>
