@@ -30,7 +30,7 @@ class Application < ApplicationRecord
       end
       program_language = InstitutionProgramLanguage.find_or_create_by(
         institution: institution,
-        starting_age: application['program_starting_age']
+        starting_age: application['program_starting_age'],
         language: application['group_language'].encode("UTF-8"),
         language_en: application['group_language_en']
       )
@@ -98,7 +98,7 @@ class Application < ApplicationRecord
     if data[:choose_not_to_receive]
       sort_index |= 1
     else
-      if data[:priority_5years_old]
+      if data[:priority_5years_old] && data[:priority_child_local]
         sort_index |= 64
       end
       if data[:priority_commission]
