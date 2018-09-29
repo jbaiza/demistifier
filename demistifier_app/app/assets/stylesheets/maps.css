@@ -34,9 +34,9 @@
 
 #grad {
   position: absolute;
-  top: 3em;
+  top: 6em;
   left: 10px;
-  height: 20px;
+  height: 2em;
   width: 150px;
   background-image: linear-gradient(to right, rgb(255, 255, 55), rgb(255, 1, 55));
 }
