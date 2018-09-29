@@ -4,7 +4,7 @@ class InstitutionsController < ApplicationController
   # GET /institutions.json
   # GET /institutions.csv
   def index
-    @institutions = Institution.includes(:region).all
+    @institutions = Institution.includes(:region, :institution_program_languages).all
     respond_to do |format|
       format.html
       format.csv do
