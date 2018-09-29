@@ -15,7 +15,7 @@
     <% applications.sort_by(&:real_queue_position).each do |application| %>
       <tr>
         <td><%= link_to application.institution_program_language.institution.name, institution_institution_program_language_path(application.institution_program_language.institution, application.institution_program_language) %></td>
-        <td><%= link_to application.institution_program_language.language_en, institution_institution_program_language_path(application.institution_program_language.institution, application.institution_program_language) %></td>
+        <td><%= link_to application.institution_program_language.language_en.capitalize, institution_institution_program_language_path(application.institution_program_language.institution, application.institution_program_language) %></td>
         <td><%= l(application.registered_date) %></td>
         <td><%= l(application.desirable_start_date) %></td>
         <td><%= application.riga_queue_position %></td>
