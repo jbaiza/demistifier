@@ -119,6 +119,11 @@ class Application < ApplicationRecord
     end
     sort_index
   end
+
+  def waiting_time
+    return 0 unless institution_program_language.avg_invited
+    (real_queue_position / institution_program_language.avg_invited)
+  end
   # 1000 0000 Pienācis iestāšanās laiks
   # 0100 0000 Obligātais vecums
   # 0010 0000 Komisijas lēmums

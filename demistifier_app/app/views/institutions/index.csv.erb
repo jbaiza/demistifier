@@ -1,12 +1,12 @@
 <%- headers = ['name', 'reg_nr', 'lr_izm_code', 'address', 'institution_type', 'email', 'url', 'lat', 'lon', 'region',
-  'language', 'starting_age', 'queue_size'] -%>
+  'language', 'starting_age', 'queue_size', 'id', 'program_language_id'] -%>
 <%= CSV.generate_line headers %>
 <%- @institutions.each do |institution| -%>
 <%- institution.institution_program_languages.each do |program_language| -%>
 <%= CSV.generate_line(
   [institution.name, institution.reg_nr, institution.lr_izm_code, institution.address, institution.institution_type,
     institution.email, institution.url, institution.lat, institution.lon, institution.region.try(:name),
-    program_language.language, program_language.starting_age, program_language.queue_size
+    program_language.language, program_language.starting_age, program_language.queue_size, institution.id, program_language.id
   ]
 ).html_safe -%>
 <%- end -%>

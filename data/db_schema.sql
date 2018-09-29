@@ -44,6 +44,7 @@ CREATE TABLE public.institutions
     alternate_names text COLLATE pg_catalog."default",
     reg_nr character varying COLLATE pg_catalog."default",
     lr_izm_code character varying COLLATE pg_catalog."default",
+    rd_iksd_code character varying COLLATE pg_catalog."default",
     address character varying COLLATE pg_catalog."default",
     institution_type character varying COLLATE pg_catalog."default",
     email character varying COLLATE pg_catalog."default",
@@ -246,3 +247,5 @@ alter table regions alter column updated_at set default current_date;
 alter table regions alter column created_at set default current_date;
 alter table institutions alter column created_at set default current_date;
 alter table institutions alter column updated_at set default current_date;
+
+alter table institutions add column rd_iksd_code character varying;

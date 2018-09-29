@@ -1,0 +1,21 @@
+<section id="search">
+  <div class="inner">
+    <%= form_tag search_children_path, method: :post do -%>
+      <h3>I do not know my kid's id</h3>
+      <hr>
+      <h3>I know my kid's id</h3>
+      <div class="row uniform 50%">
+        <div class="6u 12u$(xsmall)">
+          <input type="text" name="child_uid" id="name" value="" placeholder="Kid's ID">
+        </div>
+        <div class="6u$ 12u$(xsmall)">
+          <input type="submit" value="Search" class="special">
+        </div>
+      </div>
+    <% end -%>
+
+    <%- if @child -%>
+      <%= render 'applications', applications: @child.applications %>
+    <% end -%>
+  </div>
+</div>
