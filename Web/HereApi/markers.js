@@ -7,6 +7,8 @@ var SECONDS = 1;
 var MINUTES = 60 * SECONDS;
 var timeRange = 15 * MINUTES;
 
+var hoveringInfo = false;
+
 (function () {
 'use strict';
 
@@ -55,9 +57,11 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
 
     // Set a new starting position (departure) when the user clicks the map
     map.addEventListener('tap', function (evt) {
-        var coord = map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
-        startPosition = coord.lat + ',' + coord.lng;
-        startIsolineRouting();
+        if (!hoveringInfo) {
+            var coord = map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
+            startPosition = coord.lat + ',' + coord.lng;
+            startIsolineRouting();
+        }
     });
 
     function startIsolineRouting() {
@@ -189,6 +193,7 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
     map.addEventListener('pointermove', (e) => {
         if (hoveredObject && hoveredObject !== e.target) {
             infoBubble.close();
+            hoveringInfo = false;
         }
 
         hoveredObject = e.target;
@@ -210,6 +215,7 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
                     ${SUBahn}
                 </div>`);
                 infoBubble.open();
+                hoveringInfo = true;
             }
         }
     });
