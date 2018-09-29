@@ -31,7 +31,7 @@
           <% if index > 0 %>
             <tr>
           <% end %>
-          <td><%= program_language.language %></td>
+          <td><%= program_language.language_en.capitalize %></td>
           <td><%= program_language.starting_age %></td>
           <td><%= program_language.queue_size %></td>
           <td><%= link_to 'See queue', institution_institution_program_language_path(institution, program_language) %></td>
