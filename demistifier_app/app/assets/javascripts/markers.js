@@ -1,5 +1,6 @@
 //https://developer.here.com/api-explorer/geovisualization/technology_markers/markers-csv-provider
 /** Config **/
+if (typeof H !== 'undefined') {
 var startPosition = new H.geo.Point(56.962526, 24.097702);
 var departureTime = '2018-09-28T08:00:00';
 
@@ -255,3 +256,4 @@ var hoveringInfo = false;
     });
 
 }());
+}
