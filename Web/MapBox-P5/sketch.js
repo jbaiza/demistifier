@@ -5,13 +5,13 @@
 
 var mapimg;
 
-var clat = 0;//56.924012; 
-var clon = 0;//24.137290;
+var clat = 56.924012; 
+var clon = 24.137290;
 
-var ww = 1200;
-var hh = 600;
+var ww = 1280;
+var hh = 1280;
 
-var zoom = 1;
+var zoom = 11;
 var earthquakes;
 
 function preload() {
@@ -50,9 +50,9 @@ function setup() {
 
   for (var i = 1; i < earthquakes.length; i++) {
     var data = earthquakes[i].split(/,/);
-    var lat = data[0];
+    var lat = data[2];
     var lon = data[1];
-    var mag = data[2];
+    var mag = 7;
     var x = mercX(lon) - cx;
     var y = mercY(lat) - cy;
     // This addition fixes the case where the longitude is non-zero and
