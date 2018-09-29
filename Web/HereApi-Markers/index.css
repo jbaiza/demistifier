@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.dl-map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.info-bubble {
+    opacity: 0.75;
+    padding: 0 5px;
+    pointer-events: none;
+}
+
+.info-bubble .info-bubble-title {
+    font-size: 15px;
+    margin-left: 2px;
+}
+
+.info-bubble .info-bubble-label {
+    font-size: 10px;
+    opacity: 0.7;
+    margin-left: 2px;
+}
+
+.info-bubble .H_ib_close {
+    display: none;
+}
+
+.info-bubble .H_ib_body {
+    padding: 0;
+}
