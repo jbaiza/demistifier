@@ -30,4 +30,17 @@ module ApplicationHelper
     text.join('&#013;')
   end
 
+  def convert_to_months_years(time_in_years)
+    time_in_years = time_in_years * 12
+    years = (time_in_years / 12).round
+    months = (time_in_years - years * 12).round
+    text = []
+    if years > 0
+      text << "#{years} #{'year'.pluralize(years)}"
+    end
+    if years == 0 || months > 0
+      text << "#{months} #{'month'.pluralize(months)}"
+    end
+    text.join(' ')
+  end
 end

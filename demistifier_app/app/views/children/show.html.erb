@@ -5,4 +5,9 @@
   <%= @child.child_uid %>
 </p>
 
+<p>
+  <strong>Minimal predicted waiting time:</strong>
+  <%= convert_to_months_years(@child.min_waiting_time) %>
+</p>
+
 <%= render 'applications', applications: @child.applications %>

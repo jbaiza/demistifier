@@ -6,6 +6,7 @@
       <th>Desired start date</th>
       <th>Position in eRiga list</th>
       <th>Calculated position</th>
+      <th>Predicted waiting time / <br>Minimal predicted waiting time</th>
       <th>Total application count</th>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
         <td><%= l(application.desirable_start_date) %></td>
         <td><%= application.riga_queue_position %></td>
         <td title="<%= get_application_queue_priority_tooltip(application).html_safe %>"><%= application.real_queue_position %></td>
+        <td><%= convert_to_months_years(application.waiting_time) %> / <%= convert_to_months_years(application.child.min_waiting_time) %></td>
         <td><%= application.child.applications.count %></td>
       </tr>
     <% end %>
