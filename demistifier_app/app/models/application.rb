@@ -98,7 +98,7 @@ class Application < ApplicationRecord
     if data[:choose_not_to_receive]
       sort_index |= 1
     else
-      if data[:priority_5years_old]
+      if data[:priority_5years_old] && data[:priority_child_local]
         sort_index |= 64
       end
       if data[:priority_commission]
