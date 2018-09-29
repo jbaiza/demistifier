@@ -1,0 +1,23 @@
+-- Snippets to use in OpenRefine "Add column based on this column..." GREL expression
+-- Matching column from other project
+
+cell.cross("BD koords", "name").cells["LAT"].value[0]
+cell.cross("BD koords", "name").cells["LNG"].value[0]
+
+cell.cross("FullApplications", "institution_name").cells["institution_id"].value[0]
+
+-- replace differentqotes
+value.replace("„","\"").replace("”","\"").trim()
+
+-- Add column by fetching URLs...
+"https://nominatim.openstreetmap.org/search?q="+escape(value,"url")+"&format=json&addressdetails=1"
+
+-- Then parse JSON results
+value.parseJson()[0]["address"]["suburb"]
+
+
+-- Generate insert scripts
+"INSERT INTO statistics (institution_program_language_id, statistic_measure_id, value, year, created_at, updated_at) VALUES ((SELECT id FROM institution_program_languages WHERE institution_id=(SELECT id FROM institutions WHERE institution_id_source=" + cells["institution_id"].value + ") AND language_en='"+cells["group_language_en"].value+"'), (SELECT id FROM statistic_measures WHERE code='INVITED'), "+cells["number_of_accepted_children"].value+", "+cells["school_year"].value+", current_date, current_date);"
+
+"INSERT INTO statistics (region_id, statistic_measure_id, value, year, created_at, updated_at) VALUES ((SELECT id FROM regions WHERE name='" +cells["Code"].value+ "'), (SELECT id FROM statistic_measures WHERE code='POPULATION'), "+cells["Total"].value+", "+cells["Year"].value+", current_date, current_date);
+INSERT INTO statistics (region_id, statistic_measure_id, value, year, created_at, updated_at) VALUES ((SELECT id FROM regions WHERE name='" +cells["Code"].value+ "'), (SELECT id FROM statistic_measures WHERE code='POPULATION_UNDER_7'), "+cells["_0_6"].value+", "+cells["Year"].value+", current_date, current_date);"
