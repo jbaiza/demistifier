@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>Child UID</th>
+      <th>Date registered</th>
+      <th>Desired start date</th>
+      <th>Position in eRiga list</th>
+      <th>Calculated position</th>
+      <th>Total application count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% applications.sort_by(&:real_queue_position).each do |application| %>
+      <tr>
+        <td><%= application.child.child_uid %></td>
+        <td><%= l(application.registered_date) %></td>
+        <td><%= l(application.desirable_start_date) %></td>
+        <td><%= application.riga_queue_position %></td>
+        <td><%= application.real_queue_position %></td>
+        <td><%= application.child.applications.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

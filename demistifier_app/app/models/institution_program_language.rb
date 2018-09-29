@@ -1,5 +1,6 @@
 class InstitutionProgramLanguage < ApplicationRecord
   belongs_to :institution
+  has_many :applications
 
   def self.calculate_queue_size
     sql = "SELECT institution_program_language_id, COUNT(*) AS count " <<

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @institution_program_language.institution.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @institution_program_language.institution.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @institution_program_language.institution.email %>
+</p>
+
+<% if @institution_program_language.institution.url %>
+  <p>
+    <strong>Url:</strong>
+    <%= @institution_program_language.institution.url %>
+  </p>
+<% end %>
+
+<% if @institution_program_language.institution.region %>
+  <p>
+    <strong>Region:</strong>
+    <%= @institution_program_language.institution.region.name %>
+  </p>
+<% end %>
+
+<p>
+  <strong>Starting age:</strong>
+  <%= @institution_program_language.starting_age %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @institution_program_language.language_en.capitalize %>
+</p>
+
+<p>
+  <strong>Queue size:</strong>
+  <%= @institution_program_language.queue_size %>
+</p>
+
+<%= render 'applications', applications: @institution_program_language.applications %>

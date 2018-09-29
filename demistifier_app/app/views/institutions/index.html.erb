@@ -6,48 +6,37 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Alternate names</th>
-      <th>Reg nr</th>
-      <th>Lr izm code</th>
       <th>Address</th>
-      <th>Institution Type</th>
       <th>Email</th>
       <th>Url</th>
-      <th>Lat</th>
-      <th>Lon</th>
-      <th>Institution id source</th>
       <th>Region</th>
-      <th colspan="3"></th>
+      <th>Language</th>
+      <th>Starting age</th>
+      <th>Queue size</th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @institutions.each do |institution| %>
+    <% @institutions.each do |institution|
+      rowspan = institution.institution_program_languages.size
+      rowspan = 1 if rowspan == 0%>
       <tr>
-        <td><%= institution.name %></td>
-        <td><%= institution.alternate_names %></td>
-        <td><%= institution.reg_nr %></td>
-        <td><%= institution.lr_izm_code %></td>
-        <td><%= institution.address %></td>
-        <td><%= institution.institution_type %></td>
-        <td><%= institution.email %></td>
-        <td><%= institution.url %></td>
-        <td><%= institution.lat %></td>
-        <td><%= institution.lon %></td>
-        <td><%= institution.institution_id_source %></td>
-        <td><%= institution.region %></td>
-<% if false %>
-        <td><%= link_to 'Show', institution %></td>
-        <td><%= link_to 'Edit', edit_institution_path(institution) %></td>
-        <td><%= link_to 'Destroy', institution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<% end %>
-      </tr>
+        <td rowspan="<%= rowspan %>"><%= institution.name %></td>
+        <td rowspan="<%= rowspan %>"><%= institution.address %></td>
+        <td rowspan="<%= rowspan %>"><%= institution.email %></td>
+        <td rowspan="<%= rowspan %>"><%= institution.url %></td>
+        <td rowspan="<%= rowspan %>"><%= institution.region.try(:name) %></td>
+        <% institution.institution_program_languages.each_with_index do |program_language, index| %>
+          <% if index > 0 %>
+            <tr>
+          <% end %>
+          <td><%= program_language.language %></td>
+          <td><%= program_language.starting_age %></td>
+          <td><%= program_language.queue_size %></td>
+          <td><%= link_to 'See queue', institution_institution_program_language_path(institution, program_language) %></td>
+        </tr>
+        <% end %>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<% if false %>
-<%= link_to 'New Institution', new_institution_path %>
-<% end %>
