@@ -1,5 +1,5 @@
 //https://developer.here.com/api-explorer/geovisualization/technology_markers/markers-csv-provider
-
+/** Config **/
 var startPosition = new H.geo.Point(56.962526, 24.097702);
 var departureTime = '2018-09-28T07:00:00';
 
@@ -7,6 +7,8 @@ var SECONDS = 1;
 var MINUTES = 60 * SECONDS;
 var timeRange = 15 * MINUTES;
 
+var dataEndpoint = 'data.csv'; //'https://demistifier.ngrok.io/institutions.csv';
+///////////////////////////////////////////////////////////////////////////
 var hoveringInfo = false;
 
 (function () {
@@ -61,6 +63,12 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
             var coord = map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY);
             startPosition = coord.lat + ',' + coord.lng;
             startIsolineRouting();
+        } else if (hoveredObject.icon) {
+            let row = hoveredObject.getData();
+            if (row) {
+                let mailto = row[5];
+                window.location.href = mailto;
+            }
         }
     });
 
@@ -117,7 +125,7 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
     // download link:
     // https://www.berlin.de/sen/kultur/_assets/statistiken/kultureinrichtungen_alle.xlsx
     let provider = new H.datalens.RawDataProvider({
-        dataUrl: 'data.csv',
+        dataUrl: dataEndpoint,
         dataToFeatures: (data) => {
             let parsed = helpers.parseCSV(data);
             let features = [];
@@ -130,13 +138,17 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
                     'type': 'Feature',
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [Number(row[1]), Number(row[2])]
+                        'coordinates': [Number(row[8]), Number(row[7])]
                     },
                     'properties': {
                         'facility': row[0],
-                        'address': row[0],
-                        'SUBahn': row[0],
-                        'type': 4
+                        'address': row[3],
+                        'email': row[5],
+                        'type': row[4],
+                        'mailto': 'mailto:' + row[5],
+                        'language': row[10],
+                        'startingAge': row[11],         // Izskatās, ka tukšs?
+                        'queueSize': row[12]
                     }
                 };
                 features.push(feature);
@@ -153,8 +165,12 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
                 },
                 feature.properties.facility,
                 feature.properties.address,
-                feature.properties.SUBahn,
-                feature.properties.type
+                feature.properties.email,
+                feature.properties.type,
+                feature.properties.mailto,
+                feature.properties.language,
+                feature.properties.startingAge,
+                feature.properties.queueSize
                 ]);
             }
             return rows;
@@ -202,7 +218,10 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
             if (row) {
                 let facility = row[1];
                 let address = row[2];
-                let SUBahn = row[3];
+                let email = row[3];
+                let language = row[6];
+                let startingAge = row[7];
+                let queueSize = row[8];
 
                 let pos = map.screenToGeo(
                     e.currentPointer.viewportX,
@@ -212,7 +231,10 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
                 <div class="info-bubble-title">${facility}</div>
                 <div class="info-bubble-label">
                     ${address} <br />
-                    ${SUBahn}
+                    Apmācības valoda: ${language} <br />
+                    Rindas garums: ${queueSize} <br />
+                    <!--Uzņemšanas vecums: ${startingAge}   <--- šitais tukšs -->
+                    ${email}
                 </div>`);
                 infoBubble.open();
                 hoveringInfo = true;
