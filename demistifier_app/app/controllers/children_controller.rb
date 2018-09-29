@@ -7,6 +7,9 @@ class ChildrenController < ApplicationController
   end
 
   def search
+    if request.post?
+      @child = Child.find_by(child_uid: params[:child_uid])
+    end
   end
 
   private

@@ -121,6 +121,7 @@ class Application < ApplicationRecord
   end
 
   def waiting_time
+    return 0 unless institution_program_language.avg_invited
     (real_queue_position / institution_program_language.avg_invited)
   end
   # 1000 0000 Pienācis iestāšanās laiks
