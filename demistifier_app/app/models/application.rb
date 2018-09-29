@@ -5,13 +5,15 @@ class Application < ApplicationRecord
   def self.import_data
     @load_time = Time.now
     @imported_application_ids = []
+    @not_found_institution_id = []
     Dir.glob('../data/kg_app/KgApplications2_*.json').each do |file_path|
       if applications = JSON.parse(File.open(file_path).read).dig('value')
         load_application_records(applications)
       end
     end
-    ids_to_delete = Applications.where("id NOT IN (?)", @imported_application_ids)
-    Applications.delete(ids_to_delete) if ids_to_delete.present?
+    puts "Not found IDs: #{@not_found_institution_id.uniq.join(',')}"
+    ids_to_delete = Application.where("id NOT IN (?)", @imported_application_ids)
+    Application.delete(ids_to_delete) if ids_to_delete.present?
 
     InstitutionProgramLanguage.calculate_queue_size
     calculate_riga_queue_position
@@ -23,6 +25,7 @@ class Application < ApplicationRecord
       institution = Institution.find_by(institution_id_source: application['institution_id'])
       unless institution
         puts "Institution not found"
+        @not_found_institution_id << application['institution_id']
         next
       end
       program_language = InstitutionProgramLanguage.find_or_create_by(
