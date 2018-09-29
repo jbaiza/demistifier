@@ -1,7 +1,7 @@
 //https://developer.here.com/api-explorer/geovisualization/technology_markers/markers-csv-provider
 /** Config **/
 var startPosition = new H.geo.Point(56.962526, 24.097702);
-var departureTime = '2018-09-28T07:00:00';
+var departureTime = '2018-09-28T08:00:00';
 
 var SECONDS = 1;
 var MINUTES = 60 * SECONDS;
@@ -12,9 +12,9 @@ var dataEndpoint = 'data.csv'; //'https://demistifier.ngrok.io/institutions.csv'
 var hoveringInfo = false;
 
 (function () {
-'use strict';
-
-var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from 
+    'use strict';
+    
+    var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from 
     var app_code = 'ZhWENaBcff6Kuu5QWWhYsQ';  // <- https://developer.here.com
     // Initialize communication with the platform, to access your own data, change the values below
     // https://developer.here.com/documentation/geovisualization/topics/getting-credentials.html
@@ -71,7 +71,6 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
             }
         }
     });
-
     function startIsolineRouting() {
         // Set up the Routing API parameters
         var routingParams = {
@@ -90,7 +89,7 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
                 alert(error.message);
             });
     }
-
+    
     var onResult = function (result) {
         var center = new H.geo.Point(result.response.center.latitude, result.response.center.longitude),
             isolineCoords = result.response.isoline[0].component[0].shape,
@@ -132,6 +131,18 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
             let row = null;
             let feature = null;
 
+            function map_range(value, low1, high1, low2, high2) {
+                return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+            }
+
+            function heat(q) {
+                var clamp = 500;
+                var r = Math.floor(map_range(Math.min(q, clamp), 1, clamp, 1, 255));
+                var g = Math.floor(map_range(Math.min(q, clamp), 1, clamp, 255, 1));
+                var b = 55;
+                return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;;
+            }
+
             for (let i = 1, l = parsed.length; i < l; i++) {
                 row = parsed[i];
                 feature = {
@@ -147,8 +158,9 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
                         'type': row[4],
                         'mailto': 'mailto:' + row[5],
                         'language': row[10],
-                        'startingAge': row[11],         // Izskatās, ka tukšs?
-                        'queueSize': row[12]
+                        'startingAge': row[11],
+                        'queueSize': row[12],
+                        'queueHeat': heat(Number(row[12]))
                     }
                 };
                 features.push(feature);
@@ -170,7 +182,8 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
                 feature.properties.mailto,
                 feature.properties.language,
                 feature.properties.startingAge,
-                feature.properties.queueSize
+                feature.properties.queueSize,
+                feature.properties.queueHeat
                 ]);
             }
             return rows;
@@ -188,8 +201,7 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
         },
 
         rowToStyle: function (data, zoom) {
-            if (!venueIcons[data[4]]) { return }
-            let icon = H.datalens.ObjectLayer.createIcon(venueIcons[data[4]],
+            let icon = H.datalens.ObjectLayer.createIcon(`<svg version="1.0" xmlns="http://www.w3.org/2000/svg"  width="50.000000pt" height="50.000000pt" viewBox="0 0 50.000000 50.000000"  preserveAspectRatio="xMidYMid meet"><metadata>Created by potrace 1.15, written by Peter Selinger 2001-2017</metadata><g transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)" fill="${data[9]}" stroke="none"><path d="M169 479 c-48 -28 -73 -73 -72 -129 0 -35 14 -74 62 -169 33 -68 61 -134 61 -147 0 -19 5 -24 24 -24 19 0 25 7 30 33 3 18 33 89 66 157 34 69 60 138 60 155 0 43 -39 105 -80 126 -46 25 -106 24 -151 -2z"/></g></svg>`,
                 { size: 30 * pixelRatio });
             return { icon };
         }
@@ -233,7 +245,7 @@ var app_id = 'Wdwou7J9CcHwv9JKHUWp';      // <- replace with your own from
                     ${address} <br />
                     Apmācības valoda: ${language} <br />
                     Rindas garums: ${queueSize} <br />
-                    <!--Uzņemšanas vecums: ${startingAge}   <--- šitais tukšs -->
+                    Uzņemšanas vecums: ${startingAge} <br />
                     ${email}
                 </div>`);
                 infoBubble.open();
