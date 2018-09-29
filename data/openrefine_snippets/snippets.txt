@@ -21,3 +21,8 @@ value.parseJson()[0]["address"]["suburb"]
 
 "INSERT INTO statistics (region_id, statistic_measure_id, value, year, created_at, updated_at) VALUES ((SELECT id FROM regions WHERE name='" +cells["Code"].value+ "'), (SELECT id FROM statistic_measures WHERE code='POPULATION'), "+cells["Total"].value+", "+cells["Year"].value+", current_date, current_date);
 INSERT INTO statistics (region_id, statistic_measure_id, value, year, created_at, updated_at) VALUES ((SELECT id FROM regions WHERE name='" +cells["Code"].value+ "'), (SELECT id FROM statistic_measures WHERE code='POPULATION_UNDER_7'), "+cells["_0_6"].value+", "+cells["Year"].value+", current_date, current_date);"
+
+
+"UPDATE institutions SET rd_iksd_code='" + cells["IestadeID"].value + "' WHERE institution_id="+cells["institution_id"].value+";"
+
+
