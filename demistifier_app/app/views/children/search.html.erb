@@ -4,20 +4,47 @@
       <h3>I do not know my kid's id</h3>
       <div class="row uniform 50%">
         <div class="6u 12u$(xsmall)">
-          <input type="text" name="child_initials" id="name" value="" placeholder="Kid's initials">
+          <input type="text" name="child_initials" id="name" value="<%= @child_initials %>" placeholder="Kid's initials">
         </div>
         <div class="6u$ 12u$(xsmall)">
-          <input type="submit" value="Search" class="special">
+          <input type="submit" name="initials" value="Search" class="special">
+          <input type="submit" name="clear" value="Clear" class="special">
         </div>
       </div>
+      <% if @institutions %>
+        <%= select_tag('institution_id', options_from_collection_for_select(@institutions, :id, :name, @institution_id),
+          prompt: "Select institution") %>
+      <% end %>
+      <% if @children %>
+        <table>
+          <thead>
+            <tr>
+              <th>Child UID</th>
+              <th>Institution/Language</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @children.each do |child| %>
+              <tr>
+                <td><%= child.child_uid%></td>
+                <td>
+                  <%= child.applications.map { |a| "#{a.institution_name} / #{a.language}"}.join('<br>').html_safe %>
+                </td>
+                <td><%= link_to 'Show more', child_path(child) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
       <hr>
       <h3>I know my kid's id</h3>
       <div class="row uniform 50%">
         <div class="6u 12u$(xsmall)">
-          <input type="text" name="child_uid" id="name" value="<%= params[:child_uid] %>" placeholder="Kid's ID">
+          <input type="text" name="child_uid" id="name" value="<%= @child_uid %>" placeholder="Kid's ID">
         </div>
         <div class="6u$ 12u$(xsmall)">
-          <input type="submit" value="Search" class="special">
+          <input type="submit" name="uid" value="Search" class="special">
         </div>
       </div>
       <p class="hint">

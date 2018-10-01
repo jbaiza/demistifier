@@ -337,4 +337,12 @@ class Application < ApplicationRecord
     true
   end
 
+  def institution_name
+    institution_program_language.institution.name
+  end
+
+  def language
+    institution_program_language.language_en.capitalize
+  end
+
 end

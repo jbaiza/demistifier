@@ -4,4 +4,5 @@ class Child < ApplicationRecord
   def min_waiting_time
     applications.map{|a| a.waiting_time}.min
   end
+
 end
