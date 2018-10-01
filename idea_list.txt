@@ -1,0 +1,4 @@
+- Rindas aprēķins, ja neņemtu vērā Rīgā nedeklarētos bērnus
+- Sākuma lapas grafikā izdalīt Rīgā deklarētos/nedeklarētos
+- Iespēja aprēķināt rindu, kāda tā būtu uz norādīto vēlamo sākuma datumu
+
