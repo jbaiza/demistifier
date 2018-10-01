@@ -8,7 +8,9 @@ class ChildrenController < ApplicationController
 
   def search
     if request.post?
-      @child = Child.find_by(child_uid: params[:child_uid])
+      params[:child_uid].upcase!
+      child_uid = params[:child_uid]
+      @child = Child.find_by(child_uid: child_uid)
     end
   end
 
