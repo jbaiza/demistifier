@@ -2,58 +2,54 @@
   <div class="inner">
     <div class="row uniform 50%">
       <div class="6u 12u$(xsmall)">
-        <p>
-          <strong>Title:</strong>
-          <%= @institution_program_language.institution.name %>
-        </p>
-
-        <p>
-          <strong>Address:</strong>
-          <%= @institution_program_language.institution.address %>
-        </p>
-
-        <p>
-          <strong>Email:</strong>
-          <%= @institution_program_language.institution.email %>
-        </p>
-
-        <% if @institution_program_language.institution.url %>
-          <p>
-            <strong>Website:</strong>
-            <%= @institution_program_language.institution.url %>
-          </p>
-        <% end %>
-
-        <% if @institution_program_language.institution.region %>
-          <p>
-            <strong>Region:</strong>
-            <%= @institution_program_language.institution.region.name %>
-          </p>
-        <% end %>
+        <strong>Title:</strong>
+        <%= @institution_program_language.institution.name %>
       </div>
-
       <div class="6u$ 12u$(xsmall)">
-        <p>
-          <strong>Starting age:</strong>
-          <%= @institution_program_language.starting_age %>
-        </p>
-
-        <p>
-          <strong>Language:</strong>
-          <%= @institution_program_language.language_en.capitalize %>
-        </p>
-
-        <p>
-          <strong>Queue size:</strong>
-          <%= @institution_program_language.queue_size %>
-        </p>
-
-        <p>
-          <strong>Average invited in previous 3 years:</strong>
-          <%= @institution_program_language.avg_invited %>
-        </p>
+        <strong>Starting age:</strong>
+        <%= @institution_program_language.starting_age %>
       </div>
     </div>
+    <div class="row uniform 50%">
+      <div class="6u 12u$(xsmall)">
+        <strong>Address:</strong>
+        <%= @institution_program_language.institution.address %>
+      </div>
+      <div class="6u$ 12u$(xsmall)">
+        <strong>Language:</strong>
+        <%= @institution_program_language.language_en.capitalize %>
+      </div>
+    </div>
+    <div class="row uniform 50%">
+      <div class="6u 12u$(xsmall)">
+        <strong>Email:</strong>
+        <%= @institution_program_language.institution.email %>
+      </div>
+      <div class="6u$ 12u$(xsmall)">
+        <strong>Queue size:</strong>
+        <%= @institution_program_language.queue_size %>
+      </div>
+    </div>
+    <div class="row uniform 50%">
+      <div class="6u 12u$(xsmall)">
+        <% if @institution_program_language.institution.url %>
+          <strong>Website:</strong>
+          <%= @institution_program_language.institution.url %>
+        <% end %>
+      </div>
+      <div class="6u$ 12u$(xsmall)">
+        <strong>Average invited in previous 3 years:</strong>
+        <%= @institution_program_language.avg_invited %>
+      </div>
+    </div>
+    <% if @institution_program_language.institution.region %>
+      <div class="row uniform 50%">
+        <div class="6u$ 12u$(xsmall)">
+          <strong>Region:</strong>
+          <%= @institution_program_language.institution.region.name %>
+        </div>
+      </div>
+    <% end %>
 
     <%= render 'applications', applications: @institution_program_language.applications %>
   </div>
