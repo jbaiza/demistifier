@@ -5,7 +5,7 @@
       <th><abbr title="Date of registration in eRiga system.">Date registered</abbr></th>
       <th><abbr title="Date indicated as desired start date.">Desired start date</abbr></th>
       <th><abbr title="Position number in eRiga system.">Position in eRiga list</abbr></th>
-      <th><abbr title="Position is calculated using criteria described in eRiga website. 
+      <th><abbr title="Position is calculated using criteria described in eRiga website.
 
 36. Elektroniskajā datubāzē tiek izveidots pretendentu saraksts pieteikumu reģistrēšanas kārtībā, ievērojot šādu secību:
 
@@ -31,7 +31,7 @@
         <td><%= l(application.registered_date) %></td>
         <td><%= l(application.desirable_start_date) %></td>
         <td><%= application.riga_queue_position %></td>
-        <td title="<%= get_application_queue_priority_tooltip(application).html_safe %>"><%= application.real_queue_position %></td>
+        <td title="<%= get_application_queue_priority_tooltip(application, session).html_safe %>"><%= application.real_queue_position %></td>
         <td><%= convert_to_months_years(application.waiting_time) %> / <%= convert_to_months_years(application.child.min_waiting_time) %></td>
         <td><%= application.child.applications.count %></td>
       </tr>

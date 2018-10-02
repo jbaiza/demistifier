@@ -97,45 +97,18 @@ class Application < ApplicationRecord
   end
 
   def recalculate_sort_index(load_time)
-    sort_index = 0
-
-    if desirable_start_date <= load_time
-      sort_index |= 128
-    end
-    if choose_not_to_receive
-      sort_index |= 1
-    else
-      if priority_5years_old && priority_child_local
-        sort_index |= 64
-      end
-      if priority_commission
-        sort_index |= 32
-      end
-      if priority_sibling
-        sort_index |= 16
-      end
-      if priority_parent_local && priority_child_local
-        sort_index |= 8
-      end
-      if priority_child_local
-        sort_index |= 4
-      end
-      unless priority_parent_local && priority_child_local
-        sort_index |= 2
-      end
-    end
-    self.sort_index = sort_index
+    self.sort_index = Application.calculate_sort_index(self, load_time)
     save
   end
 
   def self.calculate_sort_index(data, load_time)
     sort_index = 0
-    if data[:desirable_start_date] <= load_time
-      sort_index |= 128
-    end
     if data[:choose_not_to_receive]
       sort_index |= 1
     else
+      if data[:desirable_start_date] <= load_time
+        sort_index |= 128
+      end
       if data[:priority_5years_old] && data[:priority_child_local]
         sort_index |= 64
       elsif data[:priority_commission]
@@ -151,6 +124,30 @@ class Application < ApplicationRecord
       end
     end
     sort_index
+  end
+
+  def self.calculate_program_applications_real_queue_position(applications, session)
+    if time = session[:calculation_time]
+      time = Time.parse(time) if time.is_a? String
+      applications = applications.sort_by { |a| Application.calculate_sort_index(a, time)}.reverse!
+      applications.each_with_index do |app, index|
+        puts "#{app.real_queue_position} - #{index + 1}"
+        app.real_queue_position = index + 1
+      end
+      applications
+    else
+      applications
+    end
+  end
+
+  def real_queue_position_calculated(session)
+    if time = session[:calculation_time]
+      time = Time.parse(time) if time.is_a? String
+      Application.where(institution_program_language_id: institution_program_language_id).
+        sort_by { |a| Application.calculate_sort_index(a, time) }.reverse.index(self) + 1
+    else
+      real_queue_position
+    end
   end
 
   def waiting_time

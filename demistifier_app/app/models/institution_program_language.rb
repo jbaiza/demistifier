@@ -26,4 +26,10 @@ class InstitutionProgramLanguage < ApplicationRecord
       program_language.update(avg_invited: sum / count) if count > 0
     end
   end
+
+  def get_applications_calculated(session)
+    calculated_applications = applications
+    Application.calculate_program_applications_real_queue_position(calculated_applications, session)
+    calculated_applications
+  end
 end

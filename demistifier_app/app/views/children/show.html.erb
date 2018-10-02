@@ -10,6 +10,6 @@
       <%= convert_to_months_years(@child.min_waiting_time) %>
     </p>
 
-    <%= render 'applications', applications: @child.applications %>
+    <%= render 'applications', applications: @child.get_applications_calculated(session) %>
   </div>
 </section>

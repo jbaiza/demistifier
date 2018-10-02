@@ -1,13 +1,18 @@
 module ApplicationHelper
 
-  def get_application_queue_priority_tooltip(application)
+  def get_application_queue_priority_tooltip(application, session)
     text = []
-    if application.sort_index & 128 == 128
-      text << "Desirable start date in past"
-    end
     if application.choose_not_to_receive
       text << "Choose not to receive invitation"
     else
+      if time = session[:calculation_time]
+        time = Time.parse(time) if time.is_a? String
+      end
+      if (time && time > application.desirable_start_date)
+        text << "Desirable start date before #{time.strftime('%F')}"
+      elsif (!time && application.sort_index & 128 == 128)
+        text << "Desirable start date in past"
+      end
       if application.priority_5years_old && application.priority_child_local
         text << "Older than 5 years"
       end

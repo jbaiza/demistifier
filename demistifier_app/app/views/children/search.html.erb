@@ -1,6 +1,15 @@
 <section id="search">
   <div class="inner">
     <%= form_tag search_children_path, method: :post do -%>
+      <div class="row uniform 50%">
+        <div class="6u 12u$(xsmall)">
+          <%= select_month(@month || Date.today) %>
+        </div>
+        <div class="6u$ 12u$(xsmall)">
+          <%= select_year(@year || Date.today, :start_year => Date.today.year, :end_year => 5.years.from_now.year) %>
+        </div>
+      </div>
+      <hr>
       <h3>I do not know my kid's id</h3>
       <div class="row uniform 50%">
         <div class="6u 12u$(xsmall)">
@@ -53,7 +62,7 @@
     <% end -%>
 
     <%- if @child -%>
-      <%= render 'applications', applications: @child.applications %>
+      <%= render 'applications', applications: @child.get_applications_calculated(session) %>
     <% end -%>
   </div>
 </div>
