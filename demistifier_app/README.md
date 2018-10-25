@@ -7,6 +7,8 @@ Things you may want to cover:
 
 * Ruby version
 
+  2.5.1
+
 * System dependencies
 
 * Configuration
@@ -14,6 +16,13 @@ Things you may want to cover:
 * Database creation
 
 * Database initialization
+
+1. Extract ZIP archive data/dump.sql.zip
+
+2. Import data using PSQL:
+
+    psql -d demistifier_app_development -f dump.sql
+
 
 * How to run the test suite
 
