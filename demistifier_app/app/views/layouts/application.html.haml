@@ -8,15 +8,6 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     %link{:href => "https://js.cit.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059", :rel => "stylesheet", :type => "text/css"}
   %body
-    %header#header
-      .inner
-        %a.logo{:href => "/"} CareQueue
-        %nav#nav
-          = render partial: 'layouts/menu'
-    %a.navPanelToggle{:href => "#menu"}
-      %span.fa.fa-bars
-    %nav#navPanel
-      = render partial: 'layouts/menu'
-      %a.navPanelClose.close{:href => "#menu"}
+    = render partial: 'layouts/header'
     = yield
     = javascript_include_tag 'application'
