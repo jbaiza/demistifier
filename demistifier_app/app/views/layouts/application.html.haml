@@ -19,27 +19,4 @@
       = render partial: 'layouts/menu'
       %a.navPanelClose.close{:href => "#menu"}
     = yield
-    - unless controller_name == 'map'
-      %section#footer
-        .inner
-          %header
-            %h2 Get in Touch
-          %form{:action => "#", :method => "post"}
-            .field.half.first
-              %label{:for => "name"} Name
-              %input#name{:name => "name", :type => "text"}/
-            .field.half
-              %label{:for => "email"} Email
-              %input#email{:name => "email", :type => "text"}/
-            .field
-              %label{:for => "message"} Message
-              %textarea#message{:name => "message", :rows => "6"}
-            %ul.actions
-              %li
-                %input.alt{:type => "submit", :value => "Send Message"}/
-          .copyright
-            © Untitled Design:
-            = succeed "." do
-              %a{:href => "https://templated.co/"} TEMPLATED
-            %a{:href => "https://unsplash.com/"} Unsplash
     = javascript_include_tag 'application'

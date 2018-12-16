@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   match "map", to: "map#show", via: [:get]
 
   get 'home/index'
+  get "contacts", to: "contacts#index"
 
   root to: 'home#index'
 end
