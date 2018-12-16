@@ -1,0 +1,22 @@
+%table
+  %thead
+    %tr
+      %th Instititution name
+      %th Language
+      %th Date registered
+      %th Desired start date
+      %th Position in eRiga list
+      %th Calculated position
+      %th Predicted waiting time
+      %th Total application count
+  %tbody
+    - applications.sort_by(&:real_queue_position).each do |application|
+      %tr
+        %td= link_to application.institution_program_language.institution.name, institution_institution_program_language_path(application.institution_program_language.institution, application.institution_program_language)
+        %td= link_to application.institution_program_language.language_en.capitalize, institution_institution_program_language_path(application.institution_program_language.institution, application.institution_program_language)
+        %td= l(application.registered_date)
+        %td= l(application.desirable_start_date)
+        %td= application.riga_queue_position
+        %td{:title => "#{get_application_queue_priority_tooltip(application, session).html_safe}"}= application.real_queue_position
+        %td= convert_to_months_years(application.waiting_time)
+        %td= application.institution_program_language.applications.count

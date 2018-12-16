@@ -1,0 +1,38 @@
+%section#show
+  .inner
+    %table
+      %thead
+        %tr
+          %th Title
+          %th Address
+          %th Email
+          %th Region
+          %th Language
+          %th Starting age
+          %th
+            %abbr{:title => "Number of children in waiting list of institution"} Queue size
+          %th
+            %abbr{:title => "Average invited in previous 3 years"} Average invited
+          %th
+      %tbody
+        - @institutions.each do |institution|
+        - rowspan = institution.institution_program_languages.size
+        - rowspan = 1 if rowspan == 0
+          %tr
+            %td{:rowspan => rowspan}
+              - if institution.url
+                %a{:href => "#{institution.url}"}= institution.name
+              - else
+                = institution.name
+            %td{:rowspan => rowspan}= institution.address
+            %td{:rowspan => rowspan}
+              %a{:href => "mailto:#{institution.email}"}= institution.email
+            %td{:rowspan => rowspan}= institution.region.try(:name)
+            - institution.institution_program_languages.each_with_index do |program_language, index|
+              - if index > 0
+                %tr
+                  %td= program_language.language_en.capitalize
+                  %td= program_language.starting_age
+                  %td= program_language.queue_size
+                  %td= program_language.avg_invited
+                  %td= link_to 'See queue', institution_institution_program_language_path(institution, program_language)

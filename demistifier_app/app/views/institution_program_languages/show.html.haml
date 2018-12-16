@@ -1,0 +1,37 @@
+%section#show
+  .inner
+    .row.uniform{:class => "50%"}
+      .6u{:class => "12u$(xsmall)"}
+        %strong Title:
+        = @institution_program_language.institution.name
+      %div{:class => "6u$ 12u$(xsmall)"}
+        %strong Starting age:
+        = @institution_program_language.starting_age
+    .row.uniform{:class => "50%"}
+      .6u{:class => "12u$(xsmall)"}
+        %strong Address:
+        = @institution_program_language.institution.address
+      %div{:class => "6u$ 12u$(xsmall)"}
+        %strong Language:
+        = @institution_program_language.language_en.capitalize
+    .row.uniform{:class => "50%"}
+      .6u{:class => "12u$(xsmall)"}
+        %strong Email:
+        = @institution_program_language.institution.email
+      %div{:class => "6u$ 12u$(xsmall)"}
+        %strong Queue size:
+        = @institution_program_language.queue_size
+    .row.uniform{:class => "50%"}
+      .6u{:class => "12u$(xsmall)"}
+        - if @institution_program_language.institution.url
+          %strong Website:
+          = @institution_program_language.institution.url
+      %div{:class => "6u$ 12u$(xsmall)"}
+        %strong Average invited in previous 3 years:
+        = @institution_program_language.avg_invited
+    - if @institution_program_language.institution.region
+      .row.uniform{:class => "50%"}
+        %div{:class => "6u$ 12u$(xsmall)"}
+          %strong Region:
+          = @institution_program_language.institution.region.name
+    = render 'applications', applications: @institution_program_language.get_applications_calculated(session)

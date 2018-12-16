@@ -1,0 +1,24 @@
+%section
+  .inner{:style => "margin-bottom: 10px"}
+    .row.uniform{:class => "50%"}
+      .4u{:class => "12u$(xsmall)"}
+        %p
+          %label Zaķītis    NN233
+        %p
+          %label{:for => "otrkid"} Kaķītis     NN234
+        %p
+          %label{:for => "notif"} Notification frequency
+          %select
+            %option Weekly
+            %option Monthly
+            %option Anually
+        %p
+          %label{:for => "addcode"} Code:
+          %input#addcode{:name => "addcode", :type => "text"}/
+        %p
+          %label{:for => "nickname"} Nickname:
+          %input#nickname{:name => "nickname", :type => "text"}/
+        %p
+          %button SUBSCRIBE
+      %div{:class => "8u$ 12u$(xsmall)"}
+        %iframe{:frameborder => "0", :height => "441", :src => "https://eazybi.com/accounts/25071/embed/report/167819?show_header=false&show_border=false", :width => "100%"}

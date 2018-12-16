@@ -1,0 +1,9 @@
+%section#show
+  .inner
+    %p
+      %strong Child UID:
+      = @child.child_uid
+    %p
+      %strong Minimal predicted waiting time:
+      = convert_to_months_years(@child.min_waiting_time)
+    = render 'applications', applications: @child.get_applications_calculated(session)

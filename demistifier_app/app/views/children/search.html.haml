@@ -1,0 +1,44 @@
+%section#search
+  .inner
+    = form_tag search_children_path, method: :post do
+      .row.uniform{:class => "50%"}
+        .6u{:class => "12u$(xsmall)"}
+          = select_month(@month || Date.today)
+        %div{:class => "6u$ 12u$(xsmall)"}
+          = select_year(@year || Date.today, :start_year => Date.today.year, :end_year => 5.years.from_now.year)
+      %hr/
+      %h3 I do not know my kid's id
+      .row.uniform{:class => "50%"}
+        .6u{:class => "12u$(xsmall)"}
+          %input#name{:name => "child_initials", :placeholder => "Kid's initials", :type => "text", :value => "#{@child_initials}"}/
+        %div{:class => "6u$ 12u$(xsmall)"}
+          %input.special{:name => "initials", :type => "submit", :value => "Search"}/
+          %input.special{:name => "clear", :type => "submit", :value => "Clear"}/
+      - if @institutions
+        = select_tag('institution_id', options_from_collection_for_select(@institutions, :id, :name, @institution_id), |
+          prompt: "Select institution")                                                                                |
+      - if @children
+        %table
+          %thead
+            %tr
+              %th Child UID
+              %th Institution/Language
+              %th
+          %tbody
+            - @children.each do |child|
+              %tr
+                %td= child.child_uid
+                %td
+                  = child.applications.map { |a| "#{a.institution_name} / #{a.language}"}.join('<br>').html_safe
+                %td= link_to 'Show more', child_path(child)
+      %hr/
+      %h3 I know my kid's id
+      .row.uniform{:class => "50%"}
+        .6u{:class => "12u$(xsmall)"}
+          %input#name{:name => "child_uid", :placeholder => "Kid's ID", :type => "text", :value => "#{@child_uid}"}/
+        %div{:class => "6u$ 12u$(xsmall)"}
+          %input.special{:name => "uid", :type => "submit", :value => "Search"}/
+      %p.hint
+        = link_to "Find out your kid's ID", hint_children_path
+    - if @child
+      = render 'applications', applications: @child.get_applications_calculated(session)
