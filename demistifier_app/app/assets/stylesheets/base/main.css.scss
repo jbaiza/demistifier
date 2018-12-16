@@ -1947,16 +1947,16 @@ hr.major {
 input,
 select,
 textarea {
-  color: #096782;
+  color: $main;
 }
 
 a {
-  color: #096782;
+  color: $main;
 }
 
 strong,
 b {
-  color: #096782;
+  color: $main;
 }
 
 h1,
@@ -1965,20 +1965,20 @@ h3,
 h4,
 h5,
 h6 {
-  color: #096782;
+  color: $main;
 }
 
 blockquote {
-  border-left-color: #096782;
+  border-left-color: $main;
 }
 
 code {
   background: none;
-  border-color: #096782;
+  border-color: $main;
 }
 
 hr {
-  border-bottom-color: #096782;
+  border-bottom-color: $main;
 }
 
 /* Box */
@@ -2003,7 +2003,7 @@ hr {
 }
 
 .box {
-  border-color: #096782;
+  border-color: $main;
 }
 
 /* Button */
@@ -2134,8 +2134,8 @@ input[type="button"].alt,
 button.alt,
 .button.alt {
   background-color: transparent;
-  box-shadow: inset 0 0 0 2px #096782;
-  color: #096782 !important;
+  box-shadow: inset 0 0 0 2px $main;
+  color: $main !important;
 }
 
 input[type="submit"].alt:hover,
@@ -2167,7 +2167,7 @@ input[type="reset"].special,
 input[type="button"].special,
 button.special,
 .button.special {
-  background-color: #096782;
+  background-color: $main;
   color: #ffffff !important;
 }
 
@@ -2405,7 +2405,7 @@ input[type="radio"] + label:before {
 }
 
 label {
-  color: #096782;
+  color: $main;
 }
 
 input[type="text"],
@@ -2422,12 +2422,12 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
-  border-color: #096782;
-  box-shadow: 0 0 0 1px #096782;
+  border-color: $main;
+  box-shadow: 0 0 0 1px $main;
 }
 
 .select-wrapper:before {
-  color: #096782;
+  color: $main;
 }
 
 input[type="checkbox"] + label,
@@ -2438,20 +2438,20 @@ input[type="radio"] + label {
 input[type="checkbox"] + label:before,
 input[type="radio"] + label:before {
   background: none;
-  border-color: #096782;
+  border-color: $main;
 }
 
 input[type="checkbox"]:checked + label:before,
 input[type="radio"]:checked + label:before {
-  background-color: #096782;
-  border-color: #096782;
+  background-color: $main;
+  border-color: $main;
   color: #ffffff;
 }
 
 input[type="checkbox"]:focus + label:before,
 input[type="radio"]:focus + label:before {
-  border-color: #096782;
-  box-shadow: 0 0 0 1px #096782;
+  border-color: $main;
+  box-shadow: 0 0 0 1px $main;
 }
 
 ::-webkit-input-placeholder {
@@ -2689,7 +2689,7 @@ dl dd {
 }
 
 ul.alt li {
-  border-top-color: #096782;
+  border-top-color: $main;
 }
 
 /* Section/Article */
@@ -2802,7 +2802,7 @@ table.alt tfoot {
 }
 
 table tbody tr {
-  border-color: #096782;
+  border-color: $main;
 }
 
 table tbody tr:nth-child(2n + 1) {
@@ -2810,19 +2810,19 @@ table tbody tr:nth-child(2n + 1) {
 }
 
 table th {
-  color: #096782;
+  color: $main;
 }
 
 table thead {
-  border-bottom-color: #096782;
+  border-bottom-color: $main;
 }
 
 table tfoot {
-  border-top-color: #096782;
+  border-top-color: $main;
 }
 
 table.alt tbody tr td {
-  border-color: #096782;
+  border-color: $main;
 }
 
 /* Wrapper */
@@ -2837,7 +2837,7 @@ table.alt tbody tr td {
 }
 
 .wrapper.style1 {
-  background-color: #096782;
+  background-color: $main;
   color: #f2a3a5;
 }
 
@@ -2947,7 +2947,7 @@ table.alt tbody tr td {
 .wrapper.style1 button.special,
 .wrapper.style1 .button.special {
   background-color: #ffffff;
-  color: #096782 !important;
+  color: $main !important;
 }
 
 .wrapper.style1 label {
@@ -2991,7 +2991,7 @@ table.alt tbody tr td {
 .wrapper.style1 input[type="radio"]:checked + label:before {
   background-color: #ffffff;
   border-color: #ffffff;
-  color: #096782;
+  color: $main;
 }
 
 .wrapper.style1 input[type="checkbox"]:focus + label:before,
@@ -3064,7 +3064,7 @@ table.alt tbody tr td {
 }
 
 .wrapper.style2 a {
-  color: #096782;
+  color: $main;
 }
 
 .wrapper.style2 strong,
@@ -3137,7 +3137,7 @@ table.alt tbody tr td {
 .wrapper.style2 input[type="button"].special,
 .wrapper.style2 button.special,
 .wrapper.style2 .button.special {
-  background-color: #096782;
+  background-color: $main;
   color: #ffffff !important;
 }
 
@@ -3175,8 +3175,8 @@ table.alt tbody tr td {
 .wrapper.style2 input[type="email"]:focus,
 .wrapper.style2 select:focus,
 .wrapper.style2 textarea:focus {
-  border-color: #096782;
-  box-shadow: 0 0 0 1px #096782;
+  border-color: $main;
+  box-shadow: 0 0 0 1px $main;
 }
 
 .wrapper.style2 .select-wrapper:before {
@@ -3196,15 +3196,15 @@ table.alt tbody tr td {
 
 .wrapper.style2 input[type="checkbox"]:checked + label:before,
 .wrapper.style2 input[type="radio"]:checked + label:before {
-  background-color: #096782;
-  border-color: #096782;
+  background-color: $main;
+  border-color: $main;
   color: #ffffff;
 }
 
 .wrapper.style2 input[type="checkbox"]:focus + label:before,
 .wrapper.style2 input[type="radio"]:focus + label:before {
-  border-color: #096782;
-  box-shadow: 0 0 0 1px #096782;
+  border-color: $main;
+  box-shadow: 0 0 0 1px $main;
 }
 
 .wrapper.style2 ::-webkit-input-placeholder {
@@ -3317,7 +3317,7 @@ body {
   padding: 0;
   position: absolute;
   top: 0;
-  color: #096782;
+  color: $main;
   font-size: 1.75em;
   text-transform: none;
   font-weight: normal;
@@ -3335,7 +3335,7 @@ body {
   transition: color 0.2s ease-in-out;
   display: inline-block;
   padding: 0 2em;
-  color: #333;
+  color: $main;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
@@ -3343,7 +3343,7 @@ body {
 }
 
 #header a:hover {
-  color: #096782;
+  color: lighten($main, 15%);
 }
 
 #header a:last-child {
@@ -3392,7 +3392,7 @@ body {
   font-style: normal;
   font-weight: normal;
   text-transform: none !important;
-  color: #096782;
+  color: $main;
   display: block;
   font-size: 16px;
   height: 2.25em;
@@ -3417,7 +3417,7 @@ body {
 }
 
 .navPanelToggle *:before {
-  color: #096782;
+  color: $main;
   display: block;
   font-size: 16px;
   height: 2.25em;
@@ -3530,7 +3530,7 @@ body {
 /* Banner */
 
 #banner {
-  background-color: #096782;
+  background-color: $main;
   color: #f2a3a5;
   padding: 13em 0 11em 0;
   background-color: #0c0c0c;
@@ -3645,7 +3645,7 @@ body {
 #banner button.special,
 #banner .button.special {
   background-color: #ffffff;
-  color: #096782 !important;
+  color: $main !important;
 }
 
 #banner:after {
@@ -3930,10 +3930,10 @@ body.is-loading #banner:after {
 /* Footer */
 
 #footer {
-  background-color: #096782;
+  background-color: $main;
   color: #f2a3a5;
   padding: 4em 0 2em 0;
-  background: #096782;
+  background: $main;
 }
 
 #footer input,
@@ -4038,7 +4038,7 @@ body.is-loading #banner:after {
 #footer button.special,
 #footer .button.special {
   background-color: #ffffff;
-  color: #096782 !important;
+  color: $main !important;
 }
 
 #footer label {
@@ -4082,7 +4082,7 @@ body.is-loading #banner:after {
 #footer input[type="radio"]:checked + label:before {
   background-color: #ffffff;
   border-color: #ffffff;
-  color: #096782;
+  color: $main;
 }
 
 #footer input[type="checkbox"]:focus + label:before,
