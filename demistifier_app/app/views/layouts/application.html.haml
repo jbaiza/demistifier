@@ -1,12 +1,6 @@
 !!!
 %html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title CareQueue
-    = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    %link{:href => "https://js.cit.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059", :rel => "stylesheet", :type => "text/css"}
+  = render partial: 'layouts/head'
   %body
     = render partial: 'layouts/header'
     = yield
