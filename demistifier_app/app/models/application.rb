@@ -129,9 +129,8 @@ class Application < ApplicationRecord
   def self.calculate_program_applications_real_queue_position(applications, session)
     if time = session[:calculation_time]
       time = Time.parse(time) if time.is_a? String
-      applications = applications.sort_by { |a| Application.calculate_sort_index(a, time)}.reverse!
+      applications = applications.sort_by { |a| [Application.calculate_sort_index(a, time), -a.riga_queue_position] }.reverse!
       applications.each_with_index do |app, index|
-        puts "#{app.real_queue_position} - #{index + 1}"
         app.real_queue_position = index + 1
       end
       applications
@@ -144,7 +143,7 @@ class Application < ApplicationRecord
     if time = session[:calculation_time]
       time = Time.parse(time) if time.is_a? String
       Application.where(institution_program_language_id: institution_program_language_id).
-        sort_by { |a| Application.calculate_sort_index(a, time) }.reverse.index(self) + 1
+        sort_by { |a| [Application.calculate_sort_index(a, time), -a.riga_queue_position] }.reverse.index(self) + 1
     else
       real_queue_position
     end
