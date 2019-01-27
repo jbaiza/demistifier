@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :subscribes, only: [:show]
-  match "subscribes", to: "subscribe#index", via: [:get]
+  # match "subscribes", to: "subscribe#index", via: [:get]
   match "map", to: "map#show", via: [:get]
 
   get 'home/index'
