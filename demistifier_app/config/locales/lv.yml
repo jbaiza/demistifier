@@ -45,7 +45,7 @@ lv:
   priority_tooltip:
     choose_not_to_receive: Šobrīd nevēlas saņemt uzaicinājumu
     desirable_start_date_before: Vēlamais mācību uzsākšanas datums pirms
-    start_date_in_past: Agrākais vēlamais mācību uzsākšanas datums ir pagātnē
+    start_date_in_past: Vēlamais mācību uzsākšanas datums ir pagātnē
     priority_5years_old: Obligātais pirmsskolas izglītības vecums
     priority_commission: Komisijas lēmums
     priority_sibling: Māsa/brālis šajā PPII
@@ -63,7 +63,9 @@ lv:
 
       36. Elektroniskajā datubāzē tiek izveidots pretendentu saraksts pieteikumu reģistrēšanas kārtībā, ievērojot šādu secību:
 
-      36.1. bērni, kuriem piešķirts statuss obligātās izglītības vecums;\n\n36.2. bērni, kuriem piešķirts statuss Komisijas lēmums;
+      36.1. bērni, kuriem piešķirts statuss obligātās izglītības vecums;
+
+      36.2. bērni, kuriem piešķirts statuss Komisijas lēmums;
 
       36.3. bērni, kuriem piešķirts statuss brālis/māsa;
 
