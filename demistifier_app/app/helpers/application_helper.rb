@@ -9,7 +9,7 @@ module ApplicationHelper
         time = Time.parse(time) if time.is_a? String
       end
       if (time && time > application.desirable_start_date)
-        text << "#{t("priority_tooltip.desirable_start_date_before")} #{l(time)}"
+        text << "#{t("priority_tooltip.desirable_start_date_before")} #{l(time.to_date)}"
       elsif (!time && application.sort_index & 128 == 128)
         text << t("priority_tooltip.start_date_in_past")
       end
