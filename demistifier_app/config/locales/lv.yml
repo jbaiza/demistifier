@@ -40,10 +40,11 @@ lv:
   map: Karte
   institutions: Bērnudārzi
   contact: Sazināties
+  data_reload: Dati atjaunoti
 
   priority_tooltip:
     choose_not_to_receive: Šobrīd nevēlas saņemt uzaicinājumu
-    desirable_start_date_before: Agrākais vēlamais mācību uzsākšanas datums
+    desirable_start_date_before: Vēlamais mācību uzsākšanas datums pirms
     start_date_in_past: Agrākais vēlamais mācību uzsākšanas datums ir pagātnē
     priority_5years_old: Obligātais pirmsskolas izglītības vecums
     priority_commission: Komisijas lēmums
@@ -54,7 +55,7 @@ lv:
 
   hint:
     child_uid: Bērna ID eRīga pirmsskolas pieteikumu sistēmā. Sākas ar bērna iniciāļiem.
-    date_registered: Datums, kad iesneiegts pieteikums.
+    date_registered: Datums, kad iesniegts pieteikums.
     desired_start_date: Agrākais datums, kurā vēlētos uzsākt mācības
     position_in_eriga: Kārtas numurs, atbilstoši eRīga sistēmai, neņemot vērā prioritātes.
     calculated_position: |
@@ -146,3 +147,9 @@ lv:
     - :year
     - :month
     - :day
+  time:
+    am: priekšpusdiena
+    formats:
+      default: "%Y. gada %e. %B, %H:%M"
+      long: "%Y. gada %e. %B, %H:%M:%S"
+      short: "%d.%m.%Y., %H:%M"

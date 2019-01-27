@@ -40,6 +40,7 @@ en:
   map: Map
   institutions: Institutions
   contact: Contact
+  data_reload: Data reloaded
 
   priority_tooltip:
     choose_not_to_receive: Choose not to receive invitation

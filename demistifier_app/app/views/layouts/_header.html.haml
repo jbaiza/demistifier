@@ -1,6 +1,6 @@
 %header#header
   .inner
-    %a.logo{href: "/"} CareQueue
+    %a.logo{href: "/", title: "#{t(:data_reload)}: #{l(@data_reload_time)}"} CareQueue
     %nav#nav
       = render partial: 'layouts/menu'
 %a.navPanelToggle{href: "#menu"}

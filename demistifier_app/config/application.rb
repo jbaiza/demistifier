@@ -18,5 +18,8 @@ module DemistifierApp
     # the framework and any gems in your application.
     I18n.available_locales = [:lv, :en]
     I18n.default_locale = :lv
+
+    config.session_store :cookie_store, expire_after: 1.days
+
   end
 end
