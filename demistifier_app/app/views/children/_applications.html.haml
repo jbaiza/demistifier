@@ -17,6 +17,6 @@
         %td= l(application.registered_date)
         %td= l(application.desirable_start_date)
         %td= application.riga_queue_position
-        %td{:title => get_application_queue_priority_tooltip(application, session).html_safe}= application.real_queue_position
+        %td{title: get_application_queue_priority_tooltip(application, session).html_safe}= application.real_queue_position
         %td= convert_to_months_years(application.waiting_time)
         %td= application.institution_program_language.applications.count

@@ -1,10 +1,10 @@
 %header#header
   .inner
-    %a.logo{:href => "/"} CareQueue
+    %a.logo{href: "/"} CareQueue
     %nav#nav
       = render partial: 'layouts/menu'
-%a.navPanelToggle{:href => "#menu"}
+%a.navPanelToggle{href: "#menu"}
   %span.fa.fa-bars
 %nav#navPanel
   = render partial: 'layouts/menu'
-  %a.navPanelClose.close{:href => "#menu"}
+  %a.navPanelClose.close{href: "#menu"}

@@ -2,22 +2,22 @@
   %thead
     %tr
       %th
-        %abbr{:title => "Child identifier in eRiga sytem. First two symbols are initials of a child."} Child UID
+        %abbr{title: "Child identifier in eRiga sytem. First two symbols are initials of a child."} Child UID
       %th
-        %abbr{:title => "Date of registration in eRiga system."} Date registered
+        %abbr{title: "Date of registration in eRiga system."} Date registered
       %th
-        %abbr{:title => "Date indicated as desired start date."} Desired start date
+        %abbr{title: "Date indicated as desired start date."} Desired start date
       %th
-        %abbr{:title => "Position number in eRiga system."} Position in eRiga list
+        %abbr{title: "Position number in eRiga system."} Position in eRiga list
       %th
-        %abbr{:title => "Position is calculated using criteria described in eRiga website.\n\n36. Elektroniskajā datubāzē tiek izveidots pretendentu saraksts pieteikumu reģistrēšanas kārtībā, ievērojot šādu secību:\n\n36.1. bērni, kuriem piešķirts statuss obligātās izglītības vecums;\n\n36.2. bērni, kuriem piešķirts statuss Komisijas lēmums;\n\n36.3. bērni, kuriem piešķirts statuss brālis/māsa;\n\n36.4. Rīgas pilsētas administratīvajā teritorijā deklarētie bērni, kuru vecāku vai bērna likumiskā pārstāvja deklarētā dzīvesvieta ir Rīgas pilsētas administratīvajā teritorijā;\n\n36.5. Rīgas pilsētas administratīvajā teritorijā deklarētie bērni, kuru vecāku vai bērna likumiskā pārstāvja deklarētā dzīvesvieta nav Rīgas pilsētas administratīvajā teritorijā;\n\n36.6. bērni, kuru deklarētā dzīvesvieta nav Rīgas pilsētas administratīvajā teritorijā."} Calculated position
+        %abbr{title: "Position is calculated using criteria described in eRiga website.\n\n36. Elektroniskajā datubāzē tiek izveidots pretendentu saraksts pieteikumu reģistrēšanas kārtībā, ievērojot šādu secību:\n\n36.1. bērni, kuriem piešķirts statuss obligātās izglītības vecums;\n\n36.2. bērni, kuriem piešķirts statuss Komisijas lēmums;\n\n36.3. bērni, kuriem piešķirts statuss brālis/māsa;\n\n36.4. Rīgas pilsētas administratīvajā teritorijā deklarētie bērni, kuru vecāku vai bērna likumiskā pārstāvja deklarētā dzīvesvieta ir Rīgas pilsētas administratīvajā teritorijā;\n\n36.5. Rīgas pilsētas administratīvajā teritorijā deklarētie bērni, kuru vecāku vai bērna likumiskā pārstāvja deklarētā dzīvesvieta nav Rīgas pilsētas administratīvajā teritorijā;\n\n36.6. bērni, kuru deklarētā dzīvesvieta nav Rīgas pilsētas administratīvajā teritorijā."} Calculated position
       %th
-        %abbr{:title => "Predicted waiting time calculated using available past data from previous 3 years. Calculated position in list is divided by average number of annual invitations."}
+        %abbr{title: "Predicted waiting time calculated using available past data from previous 3 years. Calculated position in list is divided by average number of annual invitations."}
           Predicted waiting time /
           = succeed "Minimal" do
             %br/
       %th
-        %abbr{:title => "Total number of institutions where this child is on waiting list."} Total application count
+        %abbr{title: "Total number of institutions where this child is on waiting list."} Total application count
   %tbody
     - applications.sort_by(&:real_queue_position).each do |application|
       %tr
@@ -25,7 +25,7 @@
         %td= l(application.registered_date)
         %td= l(application.desirable_start_date)
         %td= application.riga_queue_position
-        %td{:title => get_application_queue_priority_tooltip(application, session).html_safe}= application.real_queue_position
+        %td{title: get_application_queue_priority_tooltip(application, session).html_safe}= application.real_queue_position
         %td
           = convert_to_months_years(application.waiting_time)
           \/ #{convert_to_months_years(application.child.min_waiting_time)}
