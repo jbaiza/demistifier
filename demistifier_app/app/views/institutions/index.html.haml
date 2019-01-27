@@ -3,16 +3,16 @@
     %table
       %thead
         %tr
-          %th Title
-          %th Address
-          %th Email
-          %th Region
-          %th Language
-          %th Starting age
+          %th= t :title
+          %th= t :address
+          %th= t :email
+          %th= t :region
+          %th= t :language
+          %th= t :starting_age
           %th
-            %abbr{title: "Number of children in waiting list of institution"} Queue size
+            %abbr{title: t("hint.queue_size")}= t :queue_size
           %th
-            %abbr{title: "Average invited in previous 3 years"} Average invited
+            %abbr{title: t(:avg_invited)}= t :average_invited
           %th
       %tbody
         - @institutions.each do |institution|

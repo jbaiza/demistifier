@@ -3,11 +3,11 @@
     %h1
       CareQueue:
       %span
-        Pick the right kindergarten
+        = t :pick_right_kindergarten
         %br/
-        and know your real queue status
+        = t :know_queue_status
     %ul.actions
-      %li= link_to 'Get Started', search_children_path, class: "button alt"
+      %li= link_to t(:get_started), search_children_path, class: "button alt"
 %section#reports
   .inner
     %iframe{frameborder: "0", height: "151", src: "https://eazybi.com/accounts/25071/embed/report/167814?show_header=false&show_border=false", width: "1128"}

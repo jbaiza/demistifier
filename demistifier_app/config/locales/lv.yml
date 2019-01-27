@@ -1,6 +1,6 @@
 lv:
   institution_name: Iestādes nosaukums
-  languge: Valoda
+  language: Mācību valoda
   date_registered: Pieteikuma datums
   desired_start_date: Vēlamais uzsākšanas datums
   position_in_eriga: Vieta eRiga.lv
@@ -19,6 +19,27 @@ lv:
   minimal_predicted_waiting_time: Īsākā rinda
   latvian: Latviešu
   other: Mazākumtautību
+  get_in_touch: Sazināties
+  name: Vārds
+  email: Epasts uz kuru atbildēt
+  message: Ziņa
+  send_message: Nosūtīt
+  pick_right_kindergarten: Izvēlies bērnudārzu
+  know_queue_status: un saproti bērnudārzu rindas
+  get_started: Sāc šeit!
+  minimal: Īsākais
+  title: Nosaukums
+  starting_age: Mācību uzsākšanas vecums
+  address: Adrese
+  queue_size: Pieteikumu skaits
+  web_site: Mājas lapa
+  avg_invited: Vidējais uzaicinājumu skaits iepriekšējos 3 gados
+  region: Apkaime
+  see_queue: Skatīt rindu
+  average_invited: Vidēji uzaicināti
+  map: Karte
+  institutions: Bērnudārzi
+  contact: Sazināties
 
   priority_tooltip:
     choose_not_to_receive: Šobrīd nevēlas saņemt uzaicinājumu
@@ -30,6 +51,29 @@ lv:
     priority_parent_child_local: Bērna un vecāka deklarētā dzīves vieta ir Rīgā
     priority_child_local: Bērna deklarētā dzīves vieta ir Rīgā
     not_declared: Nav deklarēts Rīgā
+
+  hint:
+    child_uid: Bērna ID eRīga pirmsskolas pieteikumu sistēmā. Sākas ar bērna iniciāļiem.
+    date_registered: Datums, kad iesneiegts pieteikums.
+    desired_start_date: Agrākais datums, kurā vēlētos uzsākt mācības
+    position_in_eriga: Kārtas numurs, atbilstoši eRīga sistēmai, neņemot vērā prioritātes.
+    calculated_position: |
+      Kārtas numurs, aprēķināts saskaņā ar Rīgas domes saistošajiem noteikumiem Nr.191:
+
+      36. Elektroniskajā datubāzē tiek izveidots pretendentu saraksts pieteikumu reģistrēšanas kārtībā, ievērojot šādu secību:
+
+      36.1. bērni, kuriem piešķirts statuss obligātās izglītības vecums;\n\n36.2. bērni, kuriem piešķirts statuss Komisijas lēmums;
+
+      36.3. bērni, kuriem piešķirts statuss brālis/māsa;
+
+      36.4. Rīgas pilsētas administratīvajā teritorijā deklarētie bērni, kuru vecāku vai bērna likumiskā pārstāvja deklarētā dzīvesvieta ir Rīgas pilsētas administratīvajā teritorijā;
+
+      36.5. Rīgas pilsētas administratīvajā teritorijā deklarētie bērni, kuru vecāku vai bērna likumiskā pārstāvja deklarētā dzīvesvieta nav Rīgas pilsētas administratīvajā teritorijā;
+
+      36.6. bērni, kuru deklarētā dzīvesvieta nav Rīgas pilsētas administratīvajā teritorijā.
+    predicted_waiting_time: Aptuvenais gaidīšanas laiks, aprēķināts izdalot rindas kārtas numuru ar vidējo uzaicinājumu skaitu pēdējos 3 gados/aprēķinātais laiks šī bērna īsākajā rindā.
+    total_application_count: Kopējais aktīvo pieteikumu skaits šim bērnam.
+    queue_size: Bērnu skaits šīs iestādes rindā
 
   search_hint:
     authorization: Seko izvēlētā autorizācijas pieslēguma norādēm

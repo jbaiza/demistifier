@@ -15,10 +15,31 @@ en:
   child_initials: Kid's initials
   too_many_kids: For this institution more than %{too_many_kids} applications found with provided initials. Maybe try another one?
   how_to_find_child_id: How to find out your kid's ID
-  child_show_more_hint: YOu will see information about choosen children applications and queues. It could be a different child with the same initials registered to similar institutions
+  child_show_more_hint: You will see information about choosen children applications and queues. It could be a different child with the same initials registered to similar institutions
   minimal_predicted_waiting_time: Minimal predicted waiting time
   latvian: Latvian
   other: Other
+  get_in_touch: Get in Touch
+  name: Name
+  email: Email
+  message: Message
+  send_message: Send Message
+  pick_right_kindergarten: Pick the right kindergarten
+  know_queue_status: and know your real queue status
+  get_started: Get Started
+  minimal: Minimal
+  title: Title
+  starting_age: Starting age
+  address: Address
+  queue_size: Queue size
+  web_site: Website
+  avg_invited: Average invited in previous 3 years
+  region: Region
+  see_queue: See queue
+  average_invited: Average invited
+  map: Map
+  institutions: Institutions
+  contact: Contact
 
   priority_tooltip:
     choose_not_to_receive: Choose not to receive invitation
@@ -30,6 +51,29 @@ en:
     priority_parent_child_local: Child and parents declared in Riga
     priority_child_local: Child declared in Riga
     not_declared: Not declared in Riga
+
+  hint:
+    child_uid: Child identifier in eRiga sytem. First two symbols are initials of a child.
+    date_registered: Date of registration in eRiga system.
+    desired_start_date: Date indicated as desired start date.
+    position_in_eriga: Position number in eRiga system.
+    calculated_position: |
+      Position is calculated using criteria described in eRiga website.
+
+      36. Elektroniskajā datubāzē tiek izveidots pretendentu saraksts pieteikumu reģistrēšanas kārtībā, ievērojot šādu secību:
+
+      36.1. bērni, kuriem piešķirts statuss obligātās izglītības vecums;\n\n36.2. bērni, kuriem piešķirts statuss Komisijas lēmums;
+
+      36.3. bērni, kuriem piešķirts statuss brālis/māsa;
+
+      36.4. Rīgas pilsētas administratīvajā teritorijā deklarētie bērni, kuru vecāku vai bērna likumiskā pārstāvja deklarētā dzīvesvieta ir Rīgas pilsētas administratīvajā teritorijā;
+
+      36.5. Rīgas pilsētas administratīvajā teritorijā deklarētie bērni, kuru vecāku vai bērna likumiskā pārstāvja deklarētā dzīvesvieta nav Rīgas pilsētas administratīvajā teritorijā;
+
+      36.6. bērni, kuru deklarētā dzīvesvieta nav Rīgas pilsētas administratīvajā teritorijā.
+    predicted_waiting_time: Predicted waiting time calculated using available past data from previous 3 years. Calculated position in list is divided by average number of annual invitations.
+    total_application_count: Total number of institutions where this child is on waiting list.
+    queue_size: Number of children in waiting list of institution
 
   search_hint:
     authorization: Follow steps needed for a choosen authorization method

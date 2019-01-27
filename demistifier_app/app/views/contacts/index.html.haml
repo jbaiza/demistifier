@@ -1,17 +1,17 @@
 %section#footer
   .inner
     %header
-      %h2 Get in Touch
+      %h2= t :get_in_touch
     %form{action: "#", method: "post"}
       .field.half.first
-        %label{for: "name"} Name
+        %label{for: "name"}= t :name
         %input#name{name: "name", type: "text"}/
       .field.half
-        %label{for: "email"} Email
+        %label{for: "email"}= t :email
         %input#email{name: "email", type: "text"}/
       .field
-        %label{for: "message"} Message
+        %label{for: "message"}= t :message
         %textarea#message{name: "message", rows: "6"}
       %ul.actions
         %li
-          %input.alt{type: "submit", value: "Send Message"}
+          %input.alt{type: "submit", value: t(:send_message)}

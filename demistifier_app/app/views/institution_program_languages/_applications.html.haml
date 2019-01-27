@@ -2,22 +2,22 @@
   %thead
     %tr
       %th
-        %abbr{title: "Child identifier in eRiga sytem. First two symbols are initials of a child."} Child UID
+        %abbr{title: t("hint.child_uid")}= t :child_uid
       %th
-        %abbr{title: "Date of registration in eRiga system."} Date registered
+        %abbr{title: t("hint.date_registered")}= t :date_registered
       %th
-        %abbr{title: "Date indicated as desired start date."} Desired start date
+        %abbr{title: t("hint.desired_start_date")}= t :desired_start_date
       %th
-        %abbr{title: "Position number in eRiga system."} Position in eRiga list
+        %abbr{title: t("hint.position_in_eriga")}= t :position_in_eriga
       %th
-        %abbr{title: "Position is calculated using criteria described in eRiga website.\n\n36. Elektroniskajā datubāzē tiek izveidots pretendentu saraksts pieteikumu reģistrēšanas kārtībā, ievērojot šādu secību:\n\n36.1. bērni, kuriem piešķirts statuss obligātās izglītības vecums;\n\n36.2. bērni, kuriem piešķirts statuss Komisijas lēmums;\n\n36.3. bērni, kuriem piešķirts statuss brālis/māsa;\n\n36.4. Rīgas pilsētas administratīvajā teritorijā deklarētie bērni, kuru vecāku vai bērna likumiskā pārstāvja deklarētā dzīvesvieta ir Rīgas pilsētas administratīvajā teritorijā;\n\n36.5. Rīgas pilsētas administratīvajā teritorijā deklarētie bērni, kuru vecāku vai bērna likumiskā pārstāvja deklarētā dzīvesvieta nav Rīgas pilsētas administratīvajā teritorijā;\n\n36.6. bērni, kuru deklarētā dzīvesvieta nav Rīgas pilsētas administratīvajā teritorijā."} Calculated position
+        %abbr{title: t("hint.calculated_position")}= t :calculated_position
       %th
-        %abbr{title: "Predicted waiting time calculated using available past data from previous 3 years. Calculated position in list is divided by average number of annual invitations."}
-          Predicted waiting time /
-          = succeed "Minimal" do
-            %br/
+        %abbr{title: t("hint.predicted_waiting_time")}
+          = "#{t(:predicted_waiting_time)} /" |
+          %br
+          = t(:minimal)
       %th
-        %abbr{title: "Total number of institutions where this child is on waiting list."} Total application count
+        %abbr{title: t("hint.total_application_count")}= t :total_application_count
   %tbody
     - applications.sort_by(&:real_queue_position).each do |application|
       %tr
