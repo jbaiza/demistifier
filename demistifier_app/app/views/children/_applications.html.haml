@@ -1,19 +1,19 @@
 %table
   %thead
     %tr
-      %th Instititution name
-      %th Language
-      %th Date registered
-      %th Desired start date
-      %th Position in eRiga list
-      %th Calculated position
-      %th Predicted waiting time
-      %th Total application count
+      %th= t :institution_name
+      %th= t :language
+      %th= t :date_registered
+      %th= t :desired_start_date
+      %th= t :position_in_eriga
+      %th= t :calculated_position
+      %th= t :predicted_waiting_time
+      %th= t :total_application_count
   %tbody
     - applications.sort_by(&:real_queue_position).each do |application|
       %tr
         %td= link_to application.institution_program_language.institution.name, institution_institution_program_language_path(application.institution_program_language.institution, application.institution_program_language)
-        %td= link_to application.institution_program_language.language_en.capitalize, institution_institution_program_language_path(application.institution_program_language.institution, application.institution_program_language)
+        %td= link_to t(application.institution_program_language.language_en), institution_institution_program_language_path(application.institution_program_language.institution, application.institution_program_language)
         %td= l(application.registered_date)
         %td= l(application.desirable_start_date)
         %td= application.riga_queue_position

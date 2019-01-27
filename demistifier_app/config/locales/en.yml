@@ -1,34 +1,47 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
-  search: "Search"
+  institution_name: Instititution name
+  language: Valoda
+  date_registered: Date registered
+  desired_start_date: Desired start date
+  position_in_eriga: Position in eRiga list
+  calculated_position: Calculated position
+  predicted_waiting_time: Predicted waiting time
+  total_application_count: Total application count
+  dont_know_child_name: I do not know my kid's id (it's not personal code!)
+  know_child_name:  I know my kid's id (it's not personal code!)
+  select_institution: Select institution
+  child_uid: Child UID
+  institution_language: Institution/Language
+  child_initials: Kid's initials
+  too_many_kids: For this institution more than %{too_many_kids} applications found with provided initials. Maybe try another one?
+  how_to_find_child_id: How to find out your kid's ID
+  child_show_more_hint: YOu will see information about choosen children applications and queues. It could be a different child with the same initials registered to similar institutions
+  minimal_predicted_waiting_time: Minimal predicted waiting time
+  latvian: Latvian
+  other: Other
+
+  priority_tooltip:
+    choose_not_to_receive: Choose not to receive invitation
+    desirable_start_date_before: Desirable start date before
+    start_date_in_past: Desirable start date in past
+    priority_5years_old: Older than 5 years
+    priority_commission: Priority by commission decision
+    priority_sibling: Sibling in institution
+    priority_parent_child_local: Child and parents declared in Riga
+    priority_child_local: Child declared in Riga
+    not_declared: Not declared in Riga
+
+  search_hint:
+    authorization: Follow steps needed for a choosen authorization method
+    save_code: Remember! When you create an account, you can save code for further use.
+
+  search: Search
+  clear: Clear
+  show_more: Show more
+
+  year:
+    one: year
+    other: years
+  month:
+    one: month
+    other: months

@@ -1,9 +1,12 @@
 %section#show
   .inner
-    %p
-      %strong Child UID:
-      = @child.child_uid
-    %p
-      %strong Minimal predicted waiting time:
-      = convert_to_months_years(@child.min_waiting_time)
+    .row.uniform{class: "50%"}
+      %div{class: "12u$(xsmall)"}
+        %strong= "#{t(:child_uid)}:"
+        = @child.child_uid
+    .row.uniform{class: "50%"}
+      %div{class: "12u$(xsmall)"}
+        %strong= "#{t(:minimal_predicted_waiting_time)}:"
+        = convert_to_months_years(@child.min_waiting_time)
+    %hr/
     = render 'applications', applications: @child.get_applications_calculated(session)

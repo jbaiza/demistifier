@@ -1,0 +1,104 @@
+lv:
+  institution_name: Iestādes nosaukums
+  languge: Valoda
+  date_registered: Pieteikuma datums
+  desired_start_date: Vēlamais uzsākšanas datums
+  position_in_eriga: Vieta eRiga.lv
+  calculated_position: Aprēķinātā vieta rindā
+  predicted_waiting_time: Iespējamais gaidīšanas laiks
+  total_application_count: Kopējais pieteikumu skaits
+  dont_know_child_name: Es nezinu bērna id (tas nav personas kods!)
+  know_child_name: Es zinu bērna id (tas nav personas kods!)
+  select_institution: Izvēlies iestādi, kurā šis bērns bijis reģistrēts
+  child_uid: Bērna UID
+  institution_language: PPII/Valoda
+  child_initials: Bērna iniciāļi
+  too_many_kids: Diemžēl šai iestādei saņemti vairāk kā %{too_many_kids} pieteikumi ar šādiem iniciāļiem. Varbūt pamēģini citu?
+  how_to_find_child_id: Kā atrast bērna id eRīga
+  child_show_more_hint: Tālāk sekos informācija par izvēlētā bērna pieteikumiem un rindām. Tas var arī nebūt tieši tas bērns, kuru domājāt, bet cits bērns, kas ar tādiem pašiem iniciāļiem reģistrēts līdzīgās PPII
+  minimal_predicted_waiting_time: Īsākā rinda
+  latvian: Latviešu
+  other: Mazākumtautību
+
+  priority_tooltip:
+    choose_not_to_receive: Šobrīd nevēlas saņemt uzaicinājumu
+    desirable_start_date_before: Agrākais vēlamais mācību uzsākšanas datums
+    start_date_in_past: Agrākais vēlamais mācību uzsākšanas datums ir pagātnē
+    priority_5years_old: Obligātais pirmsskolas izglītības vecums
+    priority_commission: Komisijas lēmums
+    priority_sibling: Māsa/brālis šajā PPII
+    priority_parent_child_local: Bērna un vecāka deklarētā dzīves vieta ir Rīgā
+    priority_child_local: Bērna deklarētā dzīves vieta ir Rīgā
+    not_declared: Nav deklarēts Rīgā
+
+  search_hint:
+    authorization: Seko izvēlētā autorizācijas pieslēguma norādēm
+    save_code: Atceries! Izveidojot lietotāja kontu, vari saglabāt šo kodu turpmākai lietošanai.
+
+  search: Meklēt
+  clear: Pārtraukt
+  show_more: Parādīt vairāk
+
+  year:
+    one: gads
+    other: gadi
+  month:
+    one: mēnesis
+    other: mēneši
+
+  date:
+    abbr_day_names:
+    - Sv.
+    - P.
+    - O.
+    - T.
+    - C.
+    - Pk.
+    - S.
+    abbr_month_names:
+    -
+    - janv.
+    - febr.
+    - marts
+    - apr.
+    - maijs
+    - jūn.
+    - jūl.
+    - aug.
+    - sept.
+    - okt.
+    - nov.
+    - dec.
+    day_names:
+    - svētdiena
+    - pirmdiena
+    - otrdiena
+    - trešdiena
+    - ceturtdiena
+    - piektdiena
+    - sestdiena
+    formats:
+      default: "%d.%m.%Y."
+      long: "%Y. gada %e. %B"
+      month_day_short: "%e.%b"
+      month_year: "%Y.g. %B"
+      month_year_short: "%Y.g. %b"
+      short: "%Y.g. %e.%b"
+    month_names:
+    -
+    - janvāris
+    - februāris
+    - marts
+    - aprīlis
+    - maijs
+    - jūnijs
+    - jūlijs
+    - augusts
+    - septembris
+    - oktobris
+    - novembris
+    - decembris
+    order:
+    - :year
+    - :month
+    - :day
