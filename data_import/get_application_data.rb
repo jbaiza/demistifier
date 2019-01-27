@@ -6,7 +6,7 @@ url = 'https://opendata.riga.lv/odata/service/KgApplications2'
 loop do
   data = open(url).read
 
-  open("../data/kg_app/KgApplications2_#{i}.json", 'wb') do |file|
+  open(File.expand_path("../../shared/data/applications/KgApplications2_#{i}.json", __dir__), 'wb') do |file|
     file << data
   end
   url = JSON.parse(data)['odata.nextLink']

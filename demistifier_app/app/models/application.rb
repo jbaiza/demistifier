@@ -6,7 +6,7 @@ class Application < ApplicationRecord
     @load_time = Time.now
     @imported_application_ids = []
     @not_found_institution_id = []
-    Dir.glob('../data/kg_app/KgApplications2_*.json').each do |file_path|
+    Dir.glob('../../shared/data/applications/KgApplications2_*.json').each do |file_path|
       if applications = JSON.parse(File.open(file_path).read).dig('value')
         load_application_records(applications)
       end
