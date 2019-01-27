@@ -15,8 +15,13 @@
           %input.special{name: "initials", type: "submit", value: "Search"}/
           %input.special{name: "clear", type: "submit", value: "Clear"}/
       - if @institutions
-        = select_tag('institution_id', options_from_collection_for_select(@institutions, :id, :name, @institution_id), |
-          prompt: "Select institution")                                                                                |
+        %div{class: "12u$(xsmall)"}
+          = select_tag('institution_id', options_from_collection_for_select(@institutions, :id, :name, @institution_id), |
+            prompt: "Select institution")
+      - if @too_many_kids
+        %div{class: "12u$(xsmall)"}
+          = "For this institution more than #{@too_many_kids} applications found with provided initials."
+          Maybe try another one?
       - if @children
         %table
           %thead

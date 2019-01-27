@@ -6,6 +6,8 @@ class ChildrenController < ApplicationController
   def show
   end
 
+  SHOW_LIST_TILL = 20
+
   def search
     if time = session[:calculation_time]
       time = Time.parse(time)
@@ -37,10 +39,12 @@ class ChildrenController < ApplicationController
 
       children_count = children_query.count
       puts children_count
-      if children_count > 0 && children_count < 10
+      if children_count > 0 && children_count <= SHOW_LIST_TILL
         @children = children_query.order(:child_uid)
+      elsif children_count > SHOW_LIST_TILL
+        @too_many_kids = SHOW_LIST_TILL
       end
-      if children_count >= 10 || @institution_id
+      if children_count > SHOW_LIST_TILL || @institution_id
         @institutions = Institution.select(:id, :name).distinct.joins(institution_program_languages: [applications: [:child]]).
           where("children.child_uid LIKE ?", "#{@child_initials}%")
       end
