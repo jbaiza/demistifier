@@ -21,7 +21,7 @@
           %tr
             %td{rowspan: rowspan}
               - if institution.url
-                %a{href: "#{institution.url}"}= institution.name
+                %a{href: institution.full_url}= institution.name
               - else
                 = institution.name
             %td{rowspan: rowspan}= institution.address
