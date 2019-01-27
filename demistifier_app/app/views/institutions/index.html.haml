@@ -16,8 +16,8 @@
           %th
       %tbody
         - @institutions.each do |institution|
-        - rowspan = institution.institution_program_languages.size
-        - rowspan = 1 if rowspan == 0
+          - rowspan = institution.institution_program_languages.size
+          - rowspan = 1 if rowspan == 0
           %tr
             %td{:rowspan => rowspan}
               - if institution.url
@@ -31,8 +31,8 @@
             - institution.institution_program_languages.each_with_index do |program_language, index|
               - if index > 0
                 %tr
-                  %td= program_language.language_en.capitalize
-                  %td= program_language.starting_age
-                  %td= program_language.queue_size
-                  %td= program_language.avg_invited
-                  %td= link_to 'See queue', institution_institution_program_language_path(institution, program_language)
+              %td= program_language.language_en.capitalize
+              %td= program_language.starting_age
+              %td= program_language.queue_size
+              %td= program_language.avg_invited
+              %td= link_to 'See queue', institution_institution_program_language_path(institution, program_language)
