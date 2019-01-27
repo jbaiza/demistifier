@@ -38,10 +38,9 @@ class ChildrenController < ApplicationController
       end
 
       children_count = children_query.count
-      puts children_count
       if children_count > 0 && children_count <= SHOW_LIST_TILL
         @children = children_query.order(:child_uid)
-      elsif children_count > SHOW_LIST_TILL
+      elsif children_count > SHOW_LIST_TILL && @institution_id
         @too_many_kids = SHOW_LIST_TILL
       end
       if children_count > SHOW_LIST_TILL || @institution_id
