@@ -2,10 +2,12 @@
 - 'language', 'starting_age', 'queue_size', 'id', 'program_language_id']
 = CSV.generate_line headers
 - @institutions.each do |institution|
-  - institution.institution_program_languages.each do |program_language|
+  - institution.institution_program_languages.each_with_index do |program_language, index|
+    - lon = institution.lon
+    - lon += 0.00025 if index > 0
     = CSV.generate_line(                                                                                                             |
         [institution.name, institution.reg_nr, institution.lr_izm_code, institution.address, institution.institution_type,           |
-          institution.email, institution.url, institution.lat, institution.lon, institution.region.try(:name),                       |
+          institution.email, institution.url, institution.lat, lon, institution.region.try(:name),                                   |
           program_language.language, program_language.starting_age, program_language.queue_size, institution.id, program_language.id |
         ]                                                                                                                            |
       ).html_safe                                                                                                                    |
