@@ -20,6 +20,11 @@ class ApiController < ApplicationController
         COUNT(DISTINCT CASE WHEN desirable_start_date > CURRENT_DATE THEN child_id ELSE NULL END) AS future_queue
       FROM applications_old
     SQL
-    render json: results, status: :ok
+    response = [
+      {measure: I18n.t(:nanny_fin_or_local), value: results[0]["private_or_nanny"]},
+      {measure: I18n.t(:actual_queue), value: results[0]["actual_queue"]},
+      {measure: I18n.t(:future_queue), value: results[0]["future_queue"]}
+    ]
+    render json: response, status: :ok
   end
 end

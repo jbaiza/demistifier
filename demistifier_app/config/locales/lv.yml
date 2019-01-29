@@ -42,6 +42,10 @@ lv:
   contact: Sazināties
   data_reload: Dati atjaunoti
 
+  nanny_fin_or_local: Privātais finansējums vai auklīte
+  actual_queue: Aktuālā rinda
+  future_queue: Nākotnes rinda
+
   priority_tooltip:
     choose_not_to_receive: Šobrīd nevēlas saņemt uzaicinājumu
     desirable_start_date_before: Vēlamais mācību uzsākšanas datums pirms

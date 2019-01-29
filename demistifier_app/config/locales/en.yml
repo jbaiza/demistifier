@@ -42,6 +42,10 @@ en:
   contact: Contact
   data_reload: Data reloaded
 
+  nanny_fin_or_local: Private preschool or nanny
+  actual_queue: Actual queue
+  future_queue: Future queue
+
   priority_tooltip:
     choose_not_to_receive: Choose not to receive invitation
     desirable_start_date_before: Desirable start date before
