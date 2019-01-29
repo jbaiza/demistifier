@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get "contacts", to: "contacts#index"
 
+  get "api/applications_with_start_date_in_past", to: "api#applications_with_start_date_in_past"
+  get "api/applications_totals", to: "api#applications_totals"
+
   root to: 'home#index'
 end
