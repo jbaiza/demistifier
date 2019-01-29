@@ -18,7 +18,7 @@ class ApiController < ApplicationController
       SELECT COUNT(DISTINCT CASE WHEN nanny_fin_local OR private_fin_local THEN child_Id ELSE NULL END) AS private_or_nanny,
         COUNT(DISTINCT CASE WHEN desirable_start_date <= CURRENT_DATE THEN child_id ELSE NULL END) AS actual_queue,
         COUNT(DISTINCT CASE WHEN desirable_start_date > CURRENT_DATE THEN child_id ELSE NULL END) AS future_queue
-      FROM applications_old
+      FROM applications
     SQL
     response = [
       {measure: I18n.t(:nanny_fin_or_local), value: results[0]["private_or_nanny"]},
