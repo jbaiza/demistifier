@@ -1,0 +1,5 @@
+= simple_format(t('.body_html',
+    name: @message.name,
+    email: @message.email,
+    message: @message.message),
+  {}, sanitize: false)

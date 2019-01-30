@@ -46,6 +46,18 @@ en:
   actual_queue: Actual queue
   future_queue: Future queue
 
+  without_personal_information: |
+    Please don't include in message your own or other person data (any information that could help to identify the person)
+  message_received: Thank you, we saved your message
+  user_mailer:
+    send_mail:
+      subject: New message from CareQueue
+      body_html: |
+        Name: %{name}
+        Email: %{email}
+
+        Message: %{message}
+
   priority_tooltip:
     choose_not_to_receive: Choose not to receive invitation
     desirable_start_date_before: Desirable start date before

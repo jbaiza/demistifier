@@ -46,6 +46,18 @@ lv:
   actual_queue: Aktuālā rinda
   future_queue: Nākotnes rinda
 
+  without_personal_information: |
+    Lūdzu neiekļaujiet ziņojumā savus vai kādas citas personas datus (jebkāda informācija, kas ļauj identificēt jūs vai kādu citu)
+  message_received: Paldies, ziņa ir saglabāta
+  contacts_mailer:
+    send_mail:
+      subject: Jauns ziņojums no CareQueue
+      body_html: |
+        Vārds: %{name}
+        E-pasts: %{email}
+
+        Ziņojums: %{message}
+
   priority_tooltip:
     choose_not_to_receive: Šobrīd nevēlas saņemt uzaicinājumu
     desirable_start_date_before: Vēlamais mācību uzsākšanas datums pirms

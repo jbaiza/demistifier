@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   match "map", to: "map#show", via: [:get]
 
   get 'home/index'
-  get "contacts", to: "contacts#index"
+  match 'contacts', to: 'contacts#index', via: [:get, :post]
+
 
   get "api/applications_with_start_date_in_past", to: "api#applications_with_start_date_in_past"
   get "api/applications_totals", to: "api#applications_totals"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_29_113540) do
+ActiveRecord::Schema.define(version: 2019_01_30_085736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,14 @@ ActiveRecord::Schema.define(version: 2018_09_29_113540) do
     t.datetime "created_at", default: -> { "('now'::text)::date" }, null: false
     t.datetime "updated_at", default: -> { "('now'::text)::date" }, null: false
     t.index ["region_id"], name: "index_institutions_on_region_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "regions", force: :cascade do |t|

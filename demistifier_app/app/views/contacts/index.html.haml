@@ -2,16 +2,20 @@
   .inner
     %header
       %h2= t :get_in_touch
-    %form{action: "#", method: "post"}
+
+    -if @message
+      %h3= t :message_received
+    = form_tag contacts_path, method: 'post' do
       .field.half.first
         %label{for: "name"}= t :name
-        %input#name{name: "name", type: "text"}/
+        %input#name{name: "name", type: "text", required: true}/
       .field.half
         %label{for: "email"}= t :email
-        %input#email{name: "email", type: "text"}/
+        %input#email{name: "email", type: "text", required: true}/
       .field
         %label{for: "message"}= t :message
-        %textarea#message{name: "message", rows: "6"}
+        %textarea#message{name: "message", rows: "6", required: true}
+      .label= t :without_personal_information
       %ul.actions
         %li
           %input.alt{type: "submit", value: t(:send_message)}
