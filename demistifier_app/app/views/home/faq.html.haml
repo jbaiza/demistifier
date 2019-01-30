@@ -1,0 +1,64 @@
+%section#show
+  .inner
+    %h2 Par projektu
+
+    %h3 Kā es varu atrast tieši sava bērna datus šajā lapā?
+    %p
+      Šajā aplikācijā precīzi to izdarīt nevarēsi.
+      Tomēr, ja atceries sava bērna iniciāļus, kā arī kurās pirmsskolas izglītības iestādēs biji viņu pieteicis, varbūt varam palīdzēt tev uzminēt tava bērna kodu?
+      Precīzo kodu vari atrast eriga.lv lapā.
+
+    %h3 Kāpēc radījāt šo projektu?
+    %ul
+      %li Jo sabiedrībā eksistē ļoti daudz mītu par Rīgas bērnudārzu rindām.
+      %li
+        Jo izprast Rīgas bērnudārzu rindas un to prioritāšu sistēmu ir diezgan sarežģīti.
+        Šis ir rīks, kas ļauj to saprast labāk.
+      %li Lai demonstrētu, ka padarot datus publiskus, publika tiem dod jaunu dzīvi un rada jaunus, ērtus pielietojumus. Ne vienmēr tam nepieciešamas sarežģītas sistēmas.
+
+    %h3 No kurienes informācija?
+    %p
+      Rīgas dome
+      %a{:href => "https://data.gov.lv/dati/lv/dataset/pieteikumi-uznemsanai-rigas-pasvaldibas-pirmsskolas-izglitibas-iestades"} publicē
+      mašīnlasāmus atvērtos datus iedzīvotāju patēriņam:
+      Mēs tiem pievienojam ērtāku pārskatīšanas iespēju.
+
+    %h3 Vai šis projekts ir saistīts ar Rīgas domi?
+    %p Nē. Šis projekts nav saistīts ar Rīgas domi. Mēs izmantojam tikai publiski pieejamo informāciju.
+
+    %h3 Cik precīza ir izmantotā informācija?
+    %p Informācija ir tik precīza, cik precīzu to publicē Rīgas dome.
+    %p Ir informācija, kas tiek publicēta neaktuāla - pēc RD sniegtās informācijas atsevišķas pazīmes (piemēram 'vai deklarētā dzīvesvieta ir Rīgā') tiek aktualizētas tikai vienu vai var būt dažas reizes gadā - kad tas nepieciešams konkrēto PPII vadītājiem, lai izsūtītu uzaicinājumus.
+    %p Reizēm informācijā gadās kļūdas un e-rīga un atvērtajos datos redzamie dati atšķiras. Šo problēmu var atrisināt atvērto datu publicētājs.
+    %p Savukārt, ja pamaniet kļūdu, kas radusies mūsu interpretācijas dēļ un atšķiras no eRīga pieejamās informācijas - dodiet mums ziņu! (Lūdzu mēģiniet to aprakstīt neminot personīgi identificējamu informāciju, mums tāpat nav pieejami nekādi citi dati, kā publiski pieejamie)
+    %p Dēļ neprecizitātēm, kas atrodamas izglītības iestāžu saraksta datos, ko nepieciešams labot pirms datu tālākas izmantošanas, šo datu daļu atjaunojam retāk. Ja redziet, ka kādi not iem ir mainījušies un mūsu attēlotā informācija vairs neatbilst realitātei - dodiet mums ziņu!
+
+    %h3 Mana bērna māsa/brālis mācās PPII X bet Jūsu labā šāda prioritāte nav atzīmēta!
+    %ol
+      %li Vai esiet pārlicināti, ka skatāties uz īstā bērna UID? Varbūt tas ir cits bērns? Pārliecinieties e-rīga.
+      %li Vai mūsu informācija sakrīt ar e-rīga datiem? Ja sakīt - lūdzu sazinieties ar RD IKSD un pārliecinieties, ka informācija par Jūsu bērna brāli/māsu tiks ņemta vērā sastādot nākamo bērnudārza rindu! Ja nesakrīt - pārbaudiet, kāds datums redzams turot peli uz mūsu lapas logo un pagaidiet dažas dienas - varbūt šie dati vēl nav atjaunoti.
+
+    %h3 Cik precīzs ir aprēķinātais rindas kārtas numurs?
+    %p Tas ir aprēķināts atbilstoši pieejamajiem datiem un mēnesim, par kuru tiek veikti aprēķini (to izvēlies pirmajā lapā!).
+    %p Dati var mainīties, kārtas numuru var ietekmēt arī pārējo vecāku darbības (statusa 'vēlos/nevēlos saņemt uzaicinājumu'  maiņa, piedeklarešānās Rīgā/izdeklarēšanās no tās) - tāpat kārtas numurs mainās pienākot citu, augstākas prioritātes bērnu 'agrākajam vēlamajam mācību sākšanas datumam'
+
+    %h3 Cik precīzs ir 'gaidīšanas laiks'?
+    %p
+      %strong Tas ir ļoti, ļoti aptuvens.
+    %p Šis ir tikai instruments, kas ļauj labāk saprast un salīdzināt dažādu dārziņu rindas pārvietošanās ātrumu. Ja dārziņā rindā ir 200 bērni, bet ik gadu tiek izsūtīti 150 ielūgumi, šī rinda ir krietni īsāka, nekā dārziņam, kura rindā ir 100 bērni, bet ik gadu tiek izsūtīti vien 15 ielūgumi.
+    %p Tā ir krietni neprecīzāka īsākiem termiņiem - lai gan, ja notiek uzaicinājumi mācību gada laikā, tai var būt nozīme.
+    %p Vidējais uzaicinājumu skaits gadā (no pēdējiem 3 gadiem) tiek izdalīts uz 12 mēnešiem, parādīts noapaļojot līdz tuvākajam mēnesim VAI līdz tuvākajam gadam, ja ir virs pusgada/pusotra gada/ utml.
+    %p
+      %em Piebilde - tehnisku ierobežojumu dēļ,  bērniem, kam ir vairāki uzaicinājumi 'minimālā' rinda tiek arpēķināta pēc ŠODIENAS datuma, neatkarīgi no datuma, ko izvēlējāties pirmajā lapā (un kam atbilstoši tiek aprēķināta 'vieta šajā dārziņā'). Šī funkcionalitāte nākotnē tiks pilnveidota.
+    %h3 Kā panākt bērna ātrāku uzņemšanu dārziņā?
+    %p
+      Pārliecinieties, ka esat pareizi norādījuši visus prioritātes ietekmējošos faktorus:
+    %ul
+      %li
+        %strong Jūs ne tikai dzīvojat Rīgā, bet Jūs un Jūsu un bērns esat arī deklarēti Rīgā.
+        Ja Jūs neesat deklarēti Rīgā, iespēja saņemt uzaicinājumu būtiski samazinās.
+      %li 'Vēlamais uzsākšanas datums' nav tālā nākotnē, bet atbilst reālajam, vēlamajam uzņemšanas datumam.
+      %li Nav atzīmēts 'nevēlos saņemt uzaicinājumu'. Ar šo atzīmi iespēja saņemt uzaicinājumu būtiski samazinās.
+      %li Izvēlēties dārziņus, ar rindām, kas proporcionāli ikgadējo uzaicinājumu skaitam, ir īsākas?
+    %h3 Es atradu drukas/gramatikas kļūdu!
+    %p Jā, mums noteikti noderētu kāds, kas uzlabotu šī projekta gramatiku! Droši, dod ziņu!

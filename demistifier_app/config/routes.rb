@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
   match 'contacts', to: 'contacts#index', via: [:get, :post]
+  match 'faq', to: 'home#faq', via: [:get]
 
 
   get "api/applications_with_start_date_in_past", to: "api#applications_with_start_date_in_past"
