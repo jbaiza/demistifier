@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_30_085736) do
+ActiveRecord::Schema.define(version: 2019_02_15_204647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "application_histories", force: :cascade do |t|
+    t.bigint "institution_program_language_id"
+    t.bigint "child_id"
+    t.datetime "load_date"
+    t.date "registered_date"
+    t.string "desirable_start_date"
+    t.boolean "priority_5years_old"
+    t.boolean "priority_commission"
+    t.boolean "priority_sibling"
+    t.boolean "priority_parent_local"
+    t.boolean "priority_child_local"
+    t.boolean "private_fin_local"
+    t.boolean "nanny_fin_local"
+    t.boolean "choose_not_to_receive"
+    t.integer "riga_queue_position"
+    t.integer "real_queue_position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["child_id"], name: "index_application_histories_on_child_id"
+    t.index ["institution_program_language_id"], name: "index_application_histories_on_institution_program_language_id"
+  end
 
   create_table "applications", force: :cascade do |t|
     t.bigint "institution_program_language_id"
@@ -35,6 +57,75 @@ ActiveRecord::Schema.define(version: 2019_01_30_085736) do
     t.integer "sort_index"
     t.index ["child_id"], name: "index_applications_on_child_id"
     t.index ["institution_program_language_id"], name: "index_applications_on_institution_program_language_id"
+  end
+
+  create_table "applications_20181004", id: false, force: :cascade do |t|
+    t.bigint "id"
+    t.bigint "institution_program_language_id"
+    t.bigint "child_id"
+    t.date "registered_date"
+    t.date "desirable_start_date"
+    t.boolean "priority_5years_old"
+    t.boolean "priority_commission"
+    t.boolean "priority_sibling"
+    t.boolean "priority_parent_local"
+    t.boolean "priority_child_local"
+    t.boolean "private_fin_local"
+    t.boolean "nanny_fin_local"
+    t.boolean "choose_not_to_receive"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "riga_queue_position"
+    t.integer "real_queue_position"
+    t.integer "sort_index"
+    t.integer "sort_index_old"
+    t.integer "real_queue_posititon_old"
+  end
+
+  create_table "applications_20181011", id: false, force: :cascade do |t|
+    t.bigint "id"
+    t.bigint "institution_program_language_id"
+    t.bigint "child_id"
+    t.date "registered_date"
+    t.date "desirable_start_date"
+    t.boolean "priority_5years_old"
+    t.boolean "priority_commission"
+    t.boolean "priority_sibling"
+    t.boolean "priority_parent_local"
+    t.boolean "priority_child_local"
+    t.boolean "private_fin_local"
+    t.boolean "nanny_fin_local"
+    t.boolean "choose_not_to_receive"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "riga_queue_position"
+    t.integer "real_queue_position"
+    t.integer "sort_index"
+    t.integer "sort_index_old"
+    t.integer "real_queue_posititon_old"
+  end
+
+  create_table "applications_old", id: false, force: :cascade do |t|
+    t.bigint "id"
+    t.bigint "institution_program_language_id"
+    t.bigint "child_id"
+    t.date "registered_date"
+    t.date "desirable_start_date"
+    t.boolean "priority_5years_old"
+    t.boolean "priority_commission"
+    t.boolean "priority_sibling"
+    t.boolean "priority_parent_local"
+    t.boolean "priority_child_local"
+    t.boolean "private_fin_local"
+    t.boolean "nanny_fin_local"
+    t.boolean "choose_not_to_receive"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "riga_queue_position"
+    t.integer "real_queue_position"
+    t.integer "sort_index"
+    t.integer "sort_index_old"
+    t.integer "real_queue_posititon_old"
   end
 
   create_table "children", force: :cascade do |t|
@@ -112,6 +203,8 @@ ActiveRecord::Schema.define(version: 2019_01_30_085736) do
     t.index ["statistic_measure_id"], name: "index_statistics_on_statistic_measure_id"
   end
 
+  add_foreign_key "application_histories", "children"
+  add_foreign_key "application_histories", "institution_program_languages"
   add_foreign_key "applications", "children"
   add_foreign_key "applications", "institution_program_languages"
   add_foreign_key "institution_program_languages", "institutions"

@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  institution_program_language: one
+  child_id: one
+  load_date: 2019-02-15 22:46:47
+  registered_date: 2019-02-15
+  desirable_start_date: MyString
+  priorty_5years_old: false
+  priority_commission: false
+  priority_sibling: false
+  priority_parent_local: false
+  priority_child_local: false
+  private_fin_local: false
+  nanny_fin_local: false
+  choose_not_to_receive: false
+  riga_queue_position: 
+
+two:
+  institution_program_language: two
+  child_id: two
+  load_date: 2019-02-15 22:46:47
+  registered_date: 2019-02-15
+  desirable_start_date: MyString
+  priorty_5years_old: false
+  priority_commission: false
+  priority_sibling: false
+  priority_parent_local: false
+  priority_child_local: false
+  private_fin_local: false
+  nanny_fin_local: false
+  choose_not_to_receive: false
+  riga_queue_position: 

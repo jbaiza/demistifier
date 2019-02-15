@@ -23,6 +23,9 @@ class Application::ApplicationLoader
     InstitutionProgramLanguage.calculate_queue_size
     calculate_riga_queue_position
     calculate_real_queue_position
+
+    save_history
+    save_load_date
   end
 
   def load_application_records(applications)
@@ -97,5 +100,27 @@ class Application::ApplicationLoader
           AND (a.sort_index < b.sort_index OR (a.sort_index = b.sort_index AND a.id > b.id))
       )"
     )
+  end
+
+  def save_history
+    puts "Save history"
+    @applications_processed = 0
+    Application.all.each do |application|
+      last_history = ApplicationHistory.
+        where(institution_program_language_id: application.institution_program_language_id, child_id: application.child_id).
+        order(id: :desc).first
+      history_atributes = last_history.attributes.except("id", "sort_index", "created_at", "updated_at", "load_date") if last_history
+      application_attributes = application.attributes.except("id", "sort_index", "created_at", "updated_at")
+      if history_atributes != application_attributes
+        ApplicationHistory.create(application_attributes.merge(load_date: load_time))
+      end
+      @applications_processed += 1
+      puts "Processed #{@applications_processed} applications" if @applications_processed % 1000 == 0
+    end
+  end
+
+  def save_load_date
+    statistic_measure = StatisticMeasure.find_by(code: "DATA_RELOAD_DATE")
+    Statistic.create(statistic_measure_id: statistic_measure.id, value_date: Date.now)
   end
 end
