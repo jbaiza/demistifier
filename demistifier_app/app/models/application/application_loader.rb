@@ -52,6 +52,8 @@ class Application::ApplicationLoader
           institution_program_language: program_language,
           child: child,
           registered_date: Date.parse(application['application_registered_date']),
+          riga_queue_position: 0,
+          real_queue_position: 0
         }.merge(get_application_params_from_json(application))
         )
       end
