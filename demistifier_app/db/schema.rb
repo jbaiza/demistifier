@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_15_204647) do
+ActiveRecord::Schema.define(version: 2019_03_14_102222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2019_02_15_204647) do
     t.bigint "child_id"
     t.datetime "load_date"
     t.date "registered_date"
-    t.string "desirable_start_date"
     t.boolean "priority_5years_old"
     t.boolean "priority_commission"
     t.boolean "priority_sibling"
@@ -33,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_02_15_204647) do
     t.integer "real_queue_position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "desirable_start_date"
     t.index ["child_id"], name: "index_application_histories_on_child_id"
     t.index ["institution_program_language_id"], name: "index_application_histories_on_institution_program_language_id"
   end
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_02_15_204647) do
     t.integer "riga_queue_position"
     t.integer "real_queue_position"
     t.integer "sort_index"
+    t.boolean "updated"
     t.index ["child_id"], name: "index_applications_on_child_id"
     t.index ["institution_program_language_id"], name: "index_applications_on_institution_program_language_id"
   end

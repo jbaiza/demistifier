@@ -10,6 +10,7 @@ class Application::ApplicationLoader
   end
 
   def import_data
+    Application.update_all updated: false
     Dir.glob('../../shared/data/applications/KgApplications2_*.json').each do |file_path|
       puts "Loading file #{file_path}"
       if applications = JSON.parse(File.open(file_path).read).dig('value')
@@ -17,8 +18,7 @@ class Application::ApplicationLoader
       end
     end
     puts "Not found IDs: #{@not_found_institution_id.uniq.join(',')}"
-    ids_to_delete = Application.where("id NOT IN (?)", @imported_application_ids)
-    Application.delete(ids_to_delete) if ids_to_delete.present?
+    Application.where(updated: false).delete_all
 
     InstitutionProgramLanguage.calculate_queue_size
     calculate_riga_queue_position
@@ -71,7 +71,8 @@ class Application::ApplicationLoader
       priority_child_local: application['priority_child_reg_localgov'] == 1,
       private_fin_local: application['private_kg_fin_by_localgov'] == 1,
       nanny_fin_local: application['nanny_fin_by_localgov'] == 1,
-      choose_not_to_receive: application['chose_not_to_receive_inv'] == 1
+      choose_not_to_receive: application['chose_not_to_receive_inv'] == 1,
+      updated: true
     }
     data.merge(sort_index: Application.calculate_sort_index(data, load_time))
   end
@@ -121,6 +122,6 @@ class Application::ApplicationLoader
 
   def save_load_date
     statistic_measure = StatisticMeasure.find_by(code: "DATA_RELOAD_DATE")
-    Statistic.create(statistic_measure_id: statistic_measure.id, value_date: Date.now)
+    Statistic.create(statistic_measure_id: statistic_measure.id, value_date: load_time)
   end
 end
