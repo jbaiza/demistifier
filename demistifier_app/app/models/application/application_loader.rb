@@ -113,7 +113,7 @@ class Application::ApplicationLoader
         where(institution_program_language_id: application.institution_program_language_id, child_id: application.child_id).
         order(id: :desc).first
       history_atributes = last_history.attributes.except("id", "sort_index", "created_at", "updated_at", "load_date") if last_history
-      application_attributes = application.attributes.except("id", "sort_index", "created_at", "updated_at")
+      application_attributes = application.attributes.except("id", "sort_index", "created_at", "updated_at", "updated")
       if history_atributes != application_attributes
         ApplicationHistory.create(application_attributes.merge(load_date: load_time))
       end
